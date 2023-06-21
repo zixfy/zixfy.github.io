@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zixfy.github.io</id>
+    <title>zixfy&apos;s blog</title>
+    <updated>2023-06-21T13:31:17.717Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zixfy.github.io"/>
+    <link rel="self" href="https://zixfy.github.io/atom.xml"/>
+    <subtitle>Life is to live it</subtitle>
+    <logo>https://zixfy.github.io/images/avatar.png</logo>
+    <icon>https://zixfy.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, zixfy&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[【TODO】【Python】PEP命名规范介绍]]></title>
+        <id>https://zixfy.github.io/post/todo-python-pep-ming-ming-gui-fan-jie-shao/</id>
+        <link href="https://zixfy.github.io/post/todo-python-pep-ming-ming-gui-fan-jie-shao/">
+        </link>
+        <updated>2023-06-21T13:29:05.000Z</updated>
+        <content type="html"><![CDATA[<p>#TODO</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Gridea】bili嵌入视频测试]]></title>
+        <id>https://zixfy.github.io/post/bili-qian-ru-shi-pin-ce-shi/</id>
+        <link href="https://zixfy.github.io/post/bili-qian-ru-shi-pin-ce-shi/">
+        </link>
+        <updated>2023-06-13T12:45:11.000Z</updated>
+        <content type="html"><![CDATA[<p>iframe</p>
+<iframe src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:50vh;"> </iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【算法】最近公共祖先]]></title>
+        <id>https://zixfy.github.io/post/suan-fa-zui-jin-gong-gong-zu-xian/</id>
+        <link href="https://zixfy.github.io/post/suan-fa-zui-jin-gong-gong-zu-xian/">
+        </link>
+        <updated>2023-06-13T12:15:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="lca">LCA</h2>
+<p>让我们先回顾树上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>C</mi><mi>A</mi><mo>(</mo><mi>L</mi><mi>o</mi><mi>w</mi><mi>e</mi><mi>s</mi><mi>t</mi><mtext> </mtext><mi>C</mi><mi>o</mi><mi>m</mi><mi>m</mi><mi>o</mi><mi>n</mi><mtext> </mtext><mi>A</mi><mi>n</mi><mi>c</mi><mi>e</mi><mi>s</mi><mi>t</mi><mi>o</mi><mi>r</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">LCA(Lowest\ Common\ Ancestor)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault">L</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mspace"> </span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">m</span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mspace"> </span><span class="mord mathdefault">A</span><span class="mord mathdefault">n</span><span class="mord mathdefault">c</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span></span></span></span> 的定义，对于有向树<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>中任意结点对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&lt;x, y&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable side="right"><mlabeledtr><mtd><mtext>(1)</mtext></mtd><mtd><mrow><mi>A</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mo>{</mo><mi>a</mi><mtext> </mtext><mi mathvariant="normal">∣</mi><mtext> </mtext><mi>a</mi><mo>=</mo><mi>x</mi><mtext> </mtext><mo>∨</mo><mtext> </mtext><mi mathvariant="normal">∃</mi><mi>P</mi><mo>(</mo><mi>P</mi><mo>:</mo><mtext> </mtext><mi>a</mi><mo>→</mo><mo>⋯</mo><mo>→</mo><mi>x</mi><mo>)</mo><mo>}</mo></mrow></mtd></mlabeledtr></mtable><annotation encoding="application/x-tex">A(x) = \{a\ |\ a = x \ \lor\ \exists P(P:\ a \rightarrow \cdots \rightarrow x)\} \tag{1}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault">a</span><span class="mspace"> </span><span class="mord">∣</span><span class="mspace"> </span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.55556em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∃</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mclose">}</span></span><span class="tag"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">1</span></span><span class="mord">)</span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable side="right"><mlabeledtr><mtd><mtext>(2)</mtext></mtd><mtd><mrow><mi>z</mi><mo>=</mo><mi>L</mi><mi>C</mi><mi>A</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mspace linebreak="newline"></mspace><mo>=</mo><munder><mo><mi>a</mi><mi>r</mi><mi>g</mi><mtext> </mtext><mi>m</mi><mi>a</mi><mi>x</mi></mo><mrow><mi>f</mi><mo>∈</mo><mi>A</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>∩</mo><mi>A</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow></munder><mtext> </mtext><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>f</mi><mo>)</mo></mrow></mtd></mlabeledtr></mtable><annotation encoding="application/x-tex">z  = LCA(x, y)  \\ = \mathop{arg\ max}\limits_{f\in A(x) \cap A(y)}\ \mathrm{DEPTH}(f ) \tag{2}   
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.91044em;vertical-align:-1.16044em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.43056000000000016em;"><span style="top:-2.11456em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span><span class="mrel mtight">∈</span><span class="mord mathdefault mtight">A</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">x</span><span class="mclose mtight">)</span><span class="mbin mtight">∩</span><span class="mord mathdefault mtight">A</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.0000000000000004em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace"> </span><span class="mord mathdefault">ma</span><span class="mord mathdefault">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.16044em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span><span class="tag"><span class="strut" style="height:1.91044em;vertical-align:-1.16044em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">2</span></span><span class="mord">)</span></span></span></span></span></span></p>
+<p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>C</mi><mi>A</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">LCA(z)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span> 是他们的公共祖先，且在树中 的深度最大,当然 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> 可以是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>  。之所以称为最近公共祖先，是因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 距离之和最小</p>
+<p>我们关心 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 间的距离，往往是因为原输入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是无向树， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>  在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 中是可达的，所以有向树 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 只是在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的基础上随便选了个根节点而已。因此如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">T_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 中有简单路径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>:</mo><mtext> </mtext><mi>x</mi><mo>↔</mo><mo>⋯</mo><mi>t</mi><mo>⋯</mo><mo>↔</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">P_{xy}:\ x \leftrightarrow \cdots t \cdots \leftrightarrow y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> ,这里并不是任取中间结点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> ,而是选取出这样的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>∈</mo><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">t \in P_{xy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65418em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><msup><mi>t</mi><mo mathvariant="normal">′</mo></msup><mo>(</mo><msup><mi>t</mi><mo mathvariant="normal">′</mo></msup><mo>∈</mo><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>→</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>t</mi><mo>)</mo><mo>≤</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><msup><mi>t</mi><mo mathvariant="normal">′</mo></msup><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\forall t^{\prime}(t^{\prime} \in P_{xy} \rightarrow \mathrm{DEPTH}(t) \le \mathrm{DEPTH}(t^{\prime}))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord">∀</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> ，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{xy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 中两条路径(为了叙述方便，认为结点到本身自然有路径)</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable side="right"><mlabeledtr><mtd><mtext>(3)</mtext></mtd><mtd><mrow><msub><mi>P</mi><mrow><mi>t</mi><mi>x</mi></mrow></msub><mo>:</mo><mtext> </mtext><mi>t</mi><mo>→</mo><mo>⋯</mo><mo>→</mo><mi>x</mi><mspace width="1em"/><msub><mi>P</mi><mrow><mi>t</mi><mi>y</mi></mrow></msub><mo>:</mo><mtext> </mtext><mi>t</mi><mo>→</mo><mo>⋯</mo><mo>→</mo><mi>y</mi><mspace linebreak="newline"></mspace><mo>⇒</mo><mi>t</mi><mo>∈</mo><mi>A</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>∩</mo><mi>A</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mtd></mlabeledtr></mtable><annotation encoding="application/x-tex">P_{tx}:\ t \rightarrow \cdots \rightarrow x\quad P_{ty}:\ t \rightarrow \cdots \rightarrow y\\ \Rightarrow t \in A(x) \cap A(y) \tag{3}  
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:1em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.28055599999999997em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mspace"> </span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65418em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span><span class="tag"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">3</span></span><span class="mord">)</span></span></span></span></span></span></p>
+<p>则仅当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">z = t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 时  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>  有最短距离</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable side="right"><mlabeledtr><mtd><mtext>(4)</mtext></mtd><mtd><mrow><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mrow><mo>(</mo><mi>z</mi><mo separator="true">,</mo><mi>x</mi><mo>)</mo><mo>+</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mrow><mo>(</mo><mi>z</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mspace linebreak="newline"></mspace><mo>=</mo><mo>(</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>x</mi><mo>)</mo><mo>−</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>z</mi><mo>)</mo><mo>)</mo><mo>+</mo><mo>(</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>y</mi><mo>)</mo><mo>−</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>z</mi><mo>)</mo><mo>)</mo><mspace linebreak="newline"></mspace><mo>=</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>x</mi><mo>)</mo><mo>+</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>y</mi><mo>)</mo><mo>−</mo><mn>2</mn><mo>×</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">E</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">T</mi><mi mathvariant="normal">H</mi></mrow><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mtd></mlabeledtr></mtable><annotation encoding="application/x-tex">\mathrm{DIS}(x, y) = \mathrm{DIS}(z, x) + \mathrm{DIS}(z, y)\\ =(\mathrm{DEPTH}(x) - \mathrm{DEPTH}(z)) + (\mathrm{DEPTH}(y) - \mathrm{DEPTH}(z))\\  =\mathrm{DEPTH}(x)+ \mathrm{DEPTH}(y) - 2\times \mathrm{DEPTH}(z) \tag{4}  
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">I</span><span class="mord mathrm">S</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">I</span><span class="mord mathrm">S</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">I</span><span class="mord mathrm">S</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">E</span><span class="mord mathrm">P</span><span class="mord mathrm">T</span><span class="mord mathrm">H</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span><span class="tag"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">4</span></span><span class="mord">)</span></span></span></span></span></span></p>
+<p>有时我们更关心 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 的最短带权距离，假设每条边都有一个非负权值,比如运输	网之类的。根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mclose">)</span></span></span></span> 易知此时最短路径仍是以最近公共祖先 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> 为中转点，因此只要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mrow><mo>(</mo><mi>z</mi><mo separator="true">,</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">D</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">S</mi></mrow><mo>(</mo><mi>z</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathrm{DIS}(z, x), \mathrm{DIS}(z, y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">I</span><span class="mord mathrm">S</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathrm">D</span><span class="mord mathrm">I</span><span class="mord mathrm">S</span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>，两条固定路径上的权值和</p>
+<p>进一步地，如果要求这是一个在线算法呢，即边输入边查询，边权值动态变化。类似的在数组的 在线 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mi>M</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">RMQ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">Q</span></span></span></span> （求定义域为下标区间的函数，如区间和）问题中我们手搓一个树状数组，线段树之类的递归树结构就可以解决,而且单次查询可以达到的时间复杂度。</p>
+<p>那么对于一棵树，其实我们把结点都按某个顺序存到</p>
+<p>(关于如何求解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>C</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">LCA</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span></span></span></span> ，最易实现的是二分查找，下面给出一个古早的树链剖分求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>C</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">LCA</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span></span></span></span>的<code>c</code>实现，记不清了，修改下文代码中<code>qpath</code>函数应该就能求<code>LCA</code>)</p>
+<p><strong>重链剖分</strong></p>
+<pre><code class="language-c">#include &lt;bits/stdc++.h&gt;
+const int MAXN = 1e5 + 7;
+int MOD = 0;
+using namespace std;
+
+long long addin;
+inline int read();
+inline long long add(long long a, long long b) {return (a + b) % MOD;}
+inline long long mul(long long a, long long b) {return (a * b) % MOD;}
+inline int lson(int i) {return i &lt;&lt; 1;}
+inline int rson(int i) {return (i &lt;&lt; 1) | 1;}
+
+typedef struct node_ {
+    int l, r, m, ls, rs;
+    long long laz, sum;
+} node;
+
+typedef struct e_ {
+    int to, next;
+} edge;
+
+node ns[MAXN &lt;&lt; 2];
+edge es[MAXN &lt;&lt; 1];
+int w[MAXN], cnt, heads[MAXN];
+int pa[MAXN], dep[MAXN], hs[MAXN], sz[MAXN], top[MAXN], dfn[MAXN], rnk[MAXN], rear[MAXN];
+int t;
+
+long long build_tree(int l, int r, int p) {
+    node &amp;d = ns[p];
+    d.l = l, d.r = r, d.m = (l + r) &gt;&gt; 1;
+    if (l == r) {
+        d.sum = w[rnk[l]];
+        return d.sum;
+    }
+    d.ls = p &lt;&lt; 1;
+    d.rs = d.ls + 1;
+    return d.sum = add(build_tree(l, d.m, d.ls), build_tree(d.m + 1, r, d.rs));
+}
+
+inline void push_down(int p) {
+    node &amp;ls = ns[ns[p].ls];
+    node &amp;rs = ns[ns[p].rs];
+    long long &amp;laz = ns[p].laz;
+    if (ns[p].laz) {
+        ls.laz = add(ls.laz, laz), ls.sum = add(ls.sum, mul(laz, ns[p].m - ns[p].l + 1));
+        rs.laz = add(rs.laz, laz), rs.sum = add(rs.sum, mul(laz, ns[p].r - ns[p].m));
+        laz = 0;
+    }
+}
+
+long long update(int x, int y, int p) {
+    int &amp;l = ns[p].l;
+    int &amp;r = ns[p].r;
+    if (x &lt;= r &amp;&amp; l &lt;= y) {
+        if (r &lt;= y &amp;&amp; l &gt;= x) 
+            ns[p].laz = add(ns[p].laz, addin), ns[p].sum = add(ns[p].sum, mul(r - l + 1, addin));
+        else 
+            push_down(p), ns[p].sum = add(update(x, y, ns[p].ls), update(x, y, ns[p].rs));
+    }
+    return ns[p].sum;
+}
+
+long long qsum(int x, int y, int p) {
+    int &amp;l = ns[p].l;
+    int &amp;r = ns[p].r;
+    long long res = 0;
+    if (r &lt;= y &amp;&amp; l &gt;= x) return ns[p].sum;
+    push_down(p);
+    if (x &lt;= ns[p].m) res = add(res, qsum(x, y, ns[p].ls));
+    if (y &gt;= ns[p].m + 1) res = add(res, qsum(x, y, ns[p].rs));
+    return res;
+}
+
+inline void add_e(int x, int y) {es[++cnt] = {y, heads[x]}, heads[x] = cnt;}
+
+void dfs0(int u, int f) {
+    sz[u] = 1;
+    pa[u] = f;
+    dep[u] = dep[f] + 1;
+    for (int i = heads[u]; i; i = es[i].next) {
+        int &amp;v = es[i].to;
+        if (v != f) {
+            dfs0(v, u);
+            sz[u] += sz[v];
+            if (!hs[u] || sz[v] &gt; sz[hs[u]]) hs[u] = v;
+        }
+    }
+}
+
+void dfs1(int u, int f, int smit) {
+    dfn[u] = ++t;
+    rnk[t] = u;
+    top[u] = smit;
+    if (hs[u]) dfs1(hs[u], u, smit);
+    for (int i = heads[u]; i; i = es[i].next) {
+        int &amp;v = es[i].to;
+        if (v != f &amp;&amp; v != hs[u])
+            dfs1(v, u, v);
+    }
+    rear[u] = t;
+}
+
+long long qpath(int x, int y) {
+    long long res = 0;
+    while (top[x] != top[y]) {
+        if (dep[top[x]] &gt; dep[top[y]]) swap(x, y);
+        res = add(res, qsum(dfn[top[y]], dfn[y], 1));
+        y = pa[top[y]];
+    }
+    if (dep[x] &gt; dep[y]) swap(x, y);
+    return add(res, qsum(dfn[x], dfn[y], 1));
+}
+
+void apath(int x, int y) {
+    while (top[x] != top[y]) {
+        if (dep[top[x]] &gt; dep[top[y]]) swap(x, y);
+        update(dfn[top[y]], dfn[y], 1);
+        y = pa[top[y]];
+    }
+    if (dep[x] &gt; dep[y]) swap(x, y);
+    update(dfn[x], dfn[y], 1);
+}
+
+int main() {
+    int n, m, root, x, y, op;
+    n = read(), m = read(), root = read(), MOD = read();
+    dep[0] = -1;
+    for (int i = 1; i &lt;= n; i++) w[i] = read();
+    for (int i = 0; i &lt; n - 1; i++) 
+        x = read(), y = read(), add_e(x, y), add_e(y, x);
+    dfs0(root, 0);
+    dfs1(root, 0, root);
+    build_tree(1, n, 1);  
+    for (int i = 0; i &lt; m; i++) {
+        op = read(), x = read();
+        if (op == 4) printf(&quot;%lld\n&quot;, qsum(dfn[x], rear[x], 1));
+        else if (op == 3) addin = read(), update(dfn[x], rear[x], 1);
+        else {
+            y = read();
+            if (op == 2) printf(&quot;%lld\n&quot;, qpath(x, y));
+            else addin = read(), apath(x, y);
+        }
+    }
+}
+
+inline int read() {
+    int x = 0, f = 1; char c = getchar();
+    while (!isdigit(c)) {if (c == '-') f = -1; c = getchar();}
+    while (isdigit(c)) x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + c - '0', c = getchar();
+    return x * f;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【TODO】【算法】树状数组]]></title>
+        <id>https://zixfy.github.io/post/suan-fa-xian-zhuang-shu-zu/</id>
+        <link href="https://zixfy.github.io/post/suan-fa-xian-zhuang-shu-zu/">
+        </link>
+        <updated>2023-06-13T11:08:29.000Z</updated>
+        <content type="html"><![CDATA[<p>.keep</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【Gridea】图片预览]]></title>
+        <id>https://zixfy.github.io/post/gridea-tu-pian-yu-lan/</id>
+        <link href="https://zixfy.github.io/post/gridea-tu-pian-yu-lan/">
+        </link>
+        <updated>2023-06-11T11:08:59.000Z</updated>
+        <content type="html"><![CDATA[<p>本站托管于<code>Github Pages</code>，内容由<code>Gridea</code>生成</p>
+<p>主题为<a href="https://github.com/hsxyhao/gridea-theme-next">hexo-next</a></p>
+<p>但我在使用这个主题时，如果当前页面图片过多，点击图片打开的灯箱会很卡</p>
+<p>定位到使用<code>fancybox.js</code>实现图片预览的代码(<code>$GRIDEA_HOME\themes\gridea-theme-next-master\templates\_blocks\footer.ejs</code>)</p>
+<pre><code class="language-javascript">&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;%= site.customConfig.cdn %&gt;/media/css/jquery.fancybox.css&quot; /&gt;
+&lt;script src=&quot;&lt;%= site.customConfig.cdn %&gt;/media/js/jquery.fancybox.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  let images = document.querySelectorAll(&quot;.section img&quot;);
+  images.forEach((image) =&gt; {
+    var parent = image.parentElement;
+    var next = image.nextElementSibling;
+    parent.removeChild(image);
+    var aelem = document.createElement(&quot;a&quot;);
+    aelem.href = image.src;
+    aelem.dataset[&quot;fancybox&quot;] = &quot;images&quot;;
+    aelem.dataset[&quot;rel&quot;] = &quot;fancybox-button&quot;;
+    aelem.classList.add(&quot;fancybox&quot;);
+    aelem.appendChild(image);
+    parent.insertBefore(aelem, next);
+  });
+&lt;/script&gt;
+</code></pre>
+<p>反正就是很卡，浏览器点开图片时资源占用率明显上升，不看<code>fancybox</code>源码也不知道什么问题</p>
+<p>忍不了了，在<code>github</code>上找到一个写的比较好的图像预览的<code>js</code>（<a href="https://github.com/Tokinx/ViewImage">link</a>），下载下来并把上述代码替换成以下代码，问题就解决了</p>
+<pre><code class="language-javascript">&lt;script src=&quot;&lt;%= site.customConfig.cdn %&gt;/media/js/view-image.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.ViewImage &amp;&amp; ViewImage.init('.section img');
+&lt;/script&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【骑游】2022年骑行留念]]></title>
+        <id>https://zixfy.github.io/post/qi-you-2022-nian-qi-xing-liu-nian/</id>
+        <link href="https://zixfy.github.io/post/qi-you-2022-nian-qi-xing-liu-nian/">
+        </link>
+        <updated>2023-06-11T08:05:00.000Z</updated>
+        <content type="html"><![CDATA[<p>研一上骑行活动留念</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/2b02f98f862954706e8633986abfac1.jpg" style="zoom: 33%;" />
+<p>第一次骑的昌平绿道，路况很烂，而且需要频繁穿越机动车道，太傻逼了</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611163217.png" style="zoom:33%;" />
+<p>回龙观的自行车专用道</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/1686654322385.png" alt="" loading="lazy"></figure>
+<p>沙航<br>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/IMG20220924122139.jpg"  /><br>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230613185915.png" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230613190636.png" alt="" loading="lazy"></figure>
+<p>香山附近（路况可以，没什么车），淋着小雨回来的，但很快乐</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611164233.png" style="zoom:33%;" />
+<p>夜骑二环（路况差），我记得因为返校时已是凌晨，还要申请返校，闹麻了</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611164512.png" style="zoom:33%;" />
+<p>十三陵水库，也没什么风景吧，G6辅路车很多，比较危险</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611164712.png" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611164859.png" style="zoom:50%;" />
+<p>首钢园，三环，每次出去都要在立交拐错</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611165220.png" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/abded102814fe4255bf808ea44925c2.jpg" style="zoom: 50%;" />
+<p>昌平安四路，爬到百望路时搭上了三个小伙伴，大家成队冲下来的，很快乐</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611165640.png" style="zoom:33%;" />
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611170043.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611170013.png" alt="" loading="lazy"></figure>
+<p>戒台-潭柘</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611170635.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611170742.png" style="zoom:50%;" />
+<p>在首钢大桥</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/fotor_1667644265966.jpg" style="zoom:50%;" />
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/fotor_1667644307720.jpg" alt="" loading="lazy"></figure>
+<p>从上地爬到戒台寺</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/fotor_1667644492888.jpg" alt="" loading="lazy"></figure>
+<p>望门头沟</p>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/fotor_1667644449207.jpg" alt="" loading="lazy"></figure>
+<p>在潭柘寺牌坊，不理解这么多人信香火呢</p>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/IMG20221105140001.jpg" alt="" loading="lazy"></figure>
+<p>寒假封校没有骑了</p>
+<p>返校四环复健，艰难</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611170202.png" style="zoom:50%;" />
+<p>啊啊啊啊啊暑假回北京我必狠狠地骑🥵，狠狠地强身健体</p>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230613195929.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【TODO】【ReID论文笔记】PHA: Patch-Wise High-Frequency Augmentation for Transformer-Based Person Re-Identification]]></title>
+        <id>https://zixfy.github.io/post/todo-reid-lun-wen-bi-ji-pha-patch-wise-high-frequency-augmentation-for-transformer-based-person-re-identification/</id>
+        <link href="https://zixfy.github.io/post/todo-reid-lun-wen-bi-ji-pha-patch-wise-high-frequency-augmentation-for-transformer-based-person-re-identification/">
+        </link>
+        <updated>2023-06-10T05:19:20.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_PHA_Patch-Wise_High-Frequency_Augmentation_for_Transformer-Based_Person_Re-Identification_CVPR_2023_paper.html">A paper of CVPR' 23 HightLight</a></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1104475"><label class="task-list-item-label" for="task-item-1104475"> todo</label></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【ReID论文笔记】Discover Cross-Modality Nuances for Visible-Infrared Person Re-Identification (MPANet)]]></title>
+        <id>https://zixfy.github.io/post/reid-lun-wen-bi-ji-discover-cross-modality-nuances-for-visible-infrared-person-re-identification-mpanet/</id>
+        <link href="https://zixfy.github.io/post/reid-lun-wen-bi-ji-discover-cross-modality-nuances-for-visible-infrared-person-re-identification-mpanet/">
+        </link>
+        <updated>2023-06-09T15:05:20.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LittleGuoKe/AI-and-Person-ReID/blob/main/%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB%E6%B1%87%E6%80%BB/%E8%B5%B5%E5%AD%90%E8%BD%A9_20230510_MPAnet.pptx">组会slides</a></p>
+<p><code>VI-ReID</code>，也就是可见光-红外的跨模态场景下的行人再识别，分享的论文是<code>MPANet</code>，我们之前未涉及跨模态方面的<code>ReID</code>，因此今天的议程分为两部分，首先我带大家总结一下<code>VI-ReID</code>方向大概是在搞什么，然后再看一下今天的论文。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202310.png" style="zoom: 50%;" />
+<p>首先我们回顾一下常见的<code>ReID</code>公开数据集，比如<code>MSMT17</code>和<code>Market1501</code>，我们可以说其中大部分图像都是在白天，或者说光线比较充足的场景下采集的。然而如果在一台设备上进行不间断的再识别，那么在夜晚光线较暗时，可见光监控头成像可能整体都是暗的，采到的图像基本就不包含啥信息了。因此这时使用红外成像更加合适，比如最右边圆圈中这组图像就是近红外采集的，可见在低光照场景下，还是能从红外图像中分辨出行人与背景。再者，现在部分监控头是双摄的，也就是在检测到光照较暗时自动换用红外摄像头。所以说在<code>ReID</code>实际落地中，红外数据是我们有必要考虑到的，但加入红外数据后，只在可见光数据上训练的模型表现往往会变差，因为可见光和红外的成像原理不一样，两个模态间的<code>gap</code>比较大。现在我们可以暂且理解红外为单通道的灰度图嘛，直观上相比于<code>RGB</code>图像丢失了色彩和一些纹理信息，所以我们要想办法减小两种模态间的<code>gap</code>才能利用上红外数据。这样，我们很自然地知道了<code>VI-ReID</code>的任务目标：给定一种模态，比如说可见光图像作为<code>query</code>查询，而另一种模态，比如果红外图像作为<code>gallery</code>底库，也可以很准确地再识别。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202348.png" style="zoom:50%;" />
+<p>（平凡地对齐全局特征，难以利用上模态特有细粒度信息,导致模型泛化能力退化） 红外和可见光的模态差异其一是，同<code>ID</code>不同模态特征分布差距较大。其二，两种模态成像原理不同啊，模型能从中学到的信息也不同，两者共有的主要是行人轮廓，姿态上的信息。设想一下，我们如果只是什么也不做，利用模型已有的<code>loss</code>拉近图1中相同<code>ID</code>的两种模态的特征，那么可能的情况是模型被驱使着学到更通用，或者说两种模态共有的全局<code>level</code>的特征，但是淡化区分度更高的局部<code>level</code>的特征，那这样模型在<code>ReID</code>任务上的泛化能力会退化。比如同<code>ID</code>不同模态下行人衣服纹理这个差别是比较大的，所以我们对齐后的特征不容易体现出这一局部信息。所以如何在融合不同模态时，利用上这些留在模态内部，或者说不同模态间视觉表现差距很大的信息是一个难点。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202434.png" style="zoom:50%;" />
+<p>在讲跨模态问题的思路之前我们先来看看研究中常用的数据集，也就是中山大学的<code>MM01</code>数据集和<code>RegDB</code>数据集，前者是一个包含<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mi>w</mi><mo>+</mo></mrow><annotation encoding="application/x-tex">4w+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord">+</span></span></span></span>张图像，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>491</mn></mrow><annotation encoding="application/x-tex">491</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">9</span><span class="mord">1</span></span></span></span>个行人的大数据集，而<code>RegDB</code>是一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn><mi>k</mi><mo>+</mo></mrow><annotation encoding="application/x-tex">8k+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">8</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">+</span></span></span></span>图像的小型数据集。首先两者的红外图像有些差异，<code>SYSU</code>中使用的是近红外摄像头，而<code>RegDB</code>使用的远红外热成像，简单的讲就是两者成像所用的波长不一样，远红外光和可见光差异更大，因此<code>RegDB</code>中红外图像纹理细节损失地更多，这点我们从样例图片就能看出来，但研究中通常不会区别对待这两个数据集。<code>RegDB</code>中每个行人都有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>张可见光图像和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>张红外图，是模态平衡的数据集，因此在<code>RegDB</code>的测试集上，一般都是<code>RGB</code>和<code>IR</code>相互作为<code>query</code>进行跨模态查询。而<code>MM01</code>中<code>IR</code>图像较少，模型评估一般就是用红外图像去匹配可见光图像。另外，<code>RegDB</code>的两个<code>camera</code>就是在同一个位置上，而<code>MM01</code>的场景变化和图像数更多，后者也许更能验证模型的泛化能力</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202505.png" style="zoom:50%;" />
+<p>在<code>VI-Reid</code>方向，为了克服我们之前说过的跨模态信息损失的问题，一般的方法分为两种，也就是首先在两个模态上取交集或并集，前者可以总结为模态共享的特征学习，那这种方法往往会在对齐模态之前，设计一些结构保留住模态内部，那些区分度高的特征，从而提高<code>ReID</code>任务上的泛化能力嘛。而后者，也就是模态信息补偿的思路就是根据输入的模态生成另一种模态的图像，或者中间特征张量，然后再对齐两种模态下的特征。这种思路的难点就是加入容易受噪的生成式结构后怎么得到可靠的输出，尤其是如果要用红外生成可见光特征，红外其实本身信息量会比可见光少很多，这样的话还是比较困难的。示例图中实线框住的是原始输入的模态特征，虚线框住的是对齐后的特征</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202522.png" style="zoom:50%;" />
+<p>接下来我们简单看一下一些已有的工作，首先是生成式的方案，像<code>AlignGAN</code>就是利用可见光图像生成红外图像再送到后续网络中对齐特征。当然由于可见光/红外间的模态差异较大，比较难生成高质量的图像，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>22</mn></mrow><annotation encoding="application/x-tex">22</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">2</span></span></span></span>年的<code>FMCNet</code>等工作的思路就是更端到端一点，只生成中间的特征，通常是对得到的输出解耦出两种模态下特定的特征再送后续<code>GAN</code></p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202552.png" style="zoom:50%;" />
+<p>然后就是模态共享特征学习，像我们之前说的，这些方法通常要同时对齐全局和细粒度的特征，从而有效利用两个模态。比如说深层网络中浅层主要是体现底层视觉信息，而深层才是人员<code>ID</code>相关的信息，所以像<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>23</mn></mrow><annotation encoding="application/x-tex">23</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">3</span></span></span></span>年的<code>DEEN</code>等就是融合了多<code>level</code>的特征。再比如说<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>22</mn></mrow><annotation encoding="application/x-tex">22</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">2</span></span></span></span>年<code>DTRM</code>等工作就是把我们之前分享过的<code>PCB</code>的那种空间分块之类的方法应用到跨模态数据上，主要是融合行人的全局特征和部位特征。还有，我们可以引入注意力机制，这种思路的优点是模型会少一些先验，注意力权重能让模型学习到应该更关注通道上或者空间上的哪些区域，这对于提取模态共有的全局特征或局部特征都是挺有用的，今天要分享的<code>MPANet</code>就是主要利用了空间注意力。当然其他的思路还有不少，比如说，不从模型结构入手，而是设计度量损失函数，使得无论何种模态，输出的特征都要在不同<code>ID</code>间具有区分性，我们就不再细说了。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202630.png" style="zoom:50%;" />
+<p>接下来我们解读一下<code>MPANet</code>这篇工作，它要解决的问题，就像我们一开始说的一样，简单地对齐可见光红外的全局特征的话，粒度就比较粗。这样一些细粒度的信息由于在模态间差异太大，就不好体现在全局特征里，也就是信息损失，学习不到了。作者强调的就是要在对齐模态前找出一些细粒度信息，也就是标题里的<code>nuance</code>，文章中指的是空间上的局部特征，这篇工作主要的内容就是用空间注意力生成多种局部特征，然后同时对齐全局特征和局部的。 作者是通过一个例子来支持他的<code>motivation</code>的，图中是一个平凡的<code>backbone</code>，不同id红外特征比较接近，这就说明红外模态的特征信息熵比较小。这可能是因为红外图像包含的<code>ID</code>相关的信息一般比可见光的要小，因此模态对齐带来的信息损失更明显。我们再细看一下对应图像，一些局部信息，比如说头，裤腿，应该还是对<code>ReID</code>有帮助的，所以有必要从全局中把这些区分性强的<code>nuance</code>抽离出来。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202704.png" style="zoom:50%;" />
+<p>引完问题后作者是这样写作<code>cotribution</code>的，首先再强调一下<code>motivation</code>，也就是我们觉得只用全局不好使。在具体工作上可以分为三个部分，其一是<code>mam</code>，这是一个嵌在<code>resnet50 backbone</code>中的结构，它使用带通道注意力的<code>Instance Norm</code>减小模态分布上的<code>gap</code>，其二<code>pam</code>结构用来生成几种不同的空间注意力权重，作者把这个叫做<code>patterns</code>，也就是期望不同的<code>attention map</code>能关注不同语义的局部特征，其三，拼接局部和全局特征后，使用互学习的思想，其中添加的<code>loss</code>一方面拉近了用两种模态特征得到的id预测的分布，另一方面又驱使模型根据当前输入模态学习，也就是给一个约束来减小模态对齐的信息损失。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202740.png" style="zoom:50%;" />
+<p>首先来看<code>mam</code>模块，核心是<code>IN</code>, 经过<code>IN</code>，不同模态的特征在同一个通道上的均值方差就一样，都是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mi>k</mi></msub><mo separator="true">,</mo><mtext> </mtext><msub><mi>β</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\gamma_k,\ \beta_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05556em;">γ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.05556em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.05278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>了，原本不同模态的特征分布可能差异很大，但现在<code>IN</code>可以从分布统计量上 缓解这种差异。利用这种方法在模型前头缓解模态之间的<code>gap</code>，可以让后续结构的训练更加简单。 作者还引了一片研究<code>IN</code>相关的论文，其中说道<code>IN</code>的作用是消除图像间视觉特征的不一致，但是也会因此丢掉一些信息。比如说一方面<code>IN</code>不仅拉近了不同模态，也拉近了不同<code>ID</code>特征的距离，那在识别匹配就变困难了。尤其是两层<code>mam</code>比较靠近输出端了，这两层输出对最终特征影响是比较大的,直接用<code>IN</code>的话，实验效果证明很差。 既然in有好处有害处，那我们就把这个操作软化掉。首先考虑通道上的信息分解，每个通道的<code>feature map</code>能对应于整张输入图像，可以认为每个通道关注的是不同角度的语义信息，我们在这里加一个通道注意力机制，让模型学习到的注意力权重决定in的输出在最终输出中的占比。理论上，由于最后<code>ReID</code>的<code>id loss</code>/ <code>metric loss</code>的存在，如果<code>mam</code>输入中某个通道包含了行人<code>ID</code>相关的信息，那就弱化<code>IN</code>的加权系数，如果某个通道无所谓，那就强化<code>IN</code>的影响来缓解模态<code>gap</code></p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202807.png" style="zoom:50%;" />
+<p><code>pam</code>结构很简单，用来生成几种不同的空间注意力权重，期望不同的<code>attention map</code>能关注不同语义的局部特征</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202910.png" style="zoom:50%;" />
+<p>最后模型末端的<code>mutual learning</code>结构的作用就是我们一直在讲的，有些信息，可能是可以对齐，可以在模态间<code>share</code>的局部信息 但因为模态间这个信息差异比较大。它在模态对齐的<code>loss</code>上相比于更抽象的全局特征不占优势，因此模型会倾向忽略这些信息，那这些信息就留在模态内部了，也就是模态融合后就学不到这些信息了。所以作者在这部分<code>loss</code>设计上首先给不同模态输入用了不同的预测头计算<code>id loss</code>，驱使模型尽可能多地利用上某一个模态下和人员<code>ID</code>相关的信息。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202910.png" style="zoom:50%;" />
+<p>另一方面，<code>kl loss</code>指引下，特征过不同模态的预测头的输出分布趋近，也就是驱使模型从两个模态中抽离出更多的与模态无关，或者说模态共享的信息。这样就打到模态对齐效果 那么在两个<code>loss</code>的对抗的作用下，我们理论上就能尽可能利用上两个模态下有用的信息。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611202851.png" style="zoom:50%;" />
+<p>但还记得对比学习吗，如果<code>loss</code>有一个捷径解，那么网络可能就会坍塌到这个捷径解，在<code>kl loss</code>中捷径解是两模态的分类器参数趋同，而且分类器是<code>linear layer</code>，更容易被梯度扰动。动量更新保证<code>classier</code>趋同之前有足够的时间来对齐可见光和红外的特征。最后，因为两个模态的特征已经对齐，所以我们就可以把两个特征平等来看，进行<code>id loss</code>和中心损失的训练，这里的<code>id loss</code>两个模态用同一个分类器</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【论文阅读】Emerging Properties in Self-Supervised Vision Transformers (DINO)]]></title>
+        <id>https://zixfy.github.io/post/lun-wen-yue-du-emerging-properties-in-self-supervised-vision-transformers-dino/</id>
+        <link href="https://zixfy.github.io/post/lun-wen-yue-du-emerging-properties-in-self-supervised-vision-transformers-dino/">
+        </link>
+        <updated>2023-06-09T15:03:42.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LittleGuoKe/AI-and-Person-ReID/blob/main/%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB%E6%B1%87%E6%80%BB/%E8%B5%B5%E5%AD%90%E8%BD%A9_20230315_DINO.pptx">组会slides</a></p>
+<p>首先简单看一下对比学习领域<code>DINO</code>同时期或之前工作的经典方法，主要是这两个，1.<code>simCLR</code>结构比较经典，也比较简单； 2. <code>DINO</code>的模型结构与<code>BYOL</code>相近，</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611173044.png" style="zoom:67%;" />
+<p>首先对比学习是种自监督学习方法。有监督学习中每条数据的<code>Ground Truth</code>，或者说语义标签，来自于人工标注，比如图示中用于分类的类标签<code>dog</code>/ <code>cat</code> ，但自监督学习没有利用人工标注，而是从无标注的数据中构造 <code>label</code> ，而这个过程可以看作一个 <code>pretext task</code>，委托任务或者说代理任务，比如说 <code>MAE</code> 中将随机遮挡的图像作为输入，原图像作为<code>ground truth</code>，设计损失函数让输出与原图像尽可能相似。我们可以期待在一个设计合理的<code>pretext task</code>中，其训练的<code>backbone</code>网络能被驱使着多多少少学习到，如何表达无标注数据的语义特征。</p>
+<p>自监督学习的场景往往是在大量无标注数据上预训练模型，之后再在标注有限的下游任务中微调模型参数</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611173526.png" style="zoom: 67%;" />
+<p>那么很显然，不同自监督方法的一大区别是可以设计不同的代理任务，而对比学习中通常构建一个个体判别<code>Instance discrimination</code>的任务，这个<code>task</code>简单地说就是，既然无标注数据每张图片，都没有<code>label</code>，那就每张图片都各自临时对应一个独特的<code>label</code>好了，也就是如果把这个任务看作分类，那么每张图片单独作为一类，模型训练的目标就是尽可能把各张图片区分开来。其次呢，一张图片x可以通过数据增强得到一些图片(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>x</mi><mn>1</mn><mo>+</mo></msubsup><mo separator="true">,</mo><msubsup><mi>x</mi><mn>2</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">x^+_1, x^+_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.433692em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span>)，这些图都可以视为相同<code>label</code>，彼此互为正样本。而数据集中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>以外的图片，和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的<code>label</code>不同，彼此互为负样本。假设通过模型f提取图像特征，那么损失函数的设计原则就是最大化正样本特征的相似度，最小化负样本特征的相似度。</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611173610.png" style="zoom:67%;" />
+<p>以上就是个体判别任务的流程，实质上这个任务给学习到的特征施加了两个约束，首先是<code>Alignment</code>，也就是训练中损失函数迫使模型拉近正样本间的距离，因为正样本是同一张图像增强得到的不同图像，宏观上看是将相似的图像聚集了。数据增强中底层的视觉特征容易改变，比如旋转改变了像素纹理方向，而更抽象的语义特征不容易改变，比如一张<code>cat</code>的图像旋转后里面的cat还是只有两只耳朵两只眼睛。</p>
+<p>让模型在这种过程中学习到对某些变换（例如平移，旋转，缩放等）不敏感的特征，而这种特征恰好就包含了图像的语义，因为图像无论平移，旋转，缩放，其语义是不变的</p>
+<p><code>Alignment</code>这一约束保障模型能提取出数据增强中不变的语义信息；另一方面，<code>Uniformity</code>这一约束拉开了负样本间的距离，这将驱使无标注数据中每张图像在特征空间中均匀分布，<code>Uniformity</code>是有必要的，如果没有这个约束，那么模型就存在一个捷径解，那就是收敛时所有图像都输出相同或相近的特征，这样学到的特征没有意义，因为区分不开不同图片了，或者说模型只学到了所有数据共有的，更底层的语义。可以说<code>Alignment</code>和<code>Uniformity</code>是很多对比学习工作的方法论</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611173755.png" style="zoom:67%;" />
+<p><code>DINO</code>模型结构相对复杂一点，首先来看相关工作<code>SimCLR</code>的结构，首先构造正样本和负样本，假设<code>bactch_size</code>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>那么其中每张图像通过数据增强得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>个正样本，这一对正样本与其他<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>个增强数据互为负样本。损失函数的话是<code>softmax</code>+交叉熵的形式，所有样本计算余弦相似度，损失函数分式中分子是一对正样本的相似度，分母是其中一个正样本与所有负样本相似度之和，这样模型参数优化中会受到 <code>Alignment</code>与<code>Uniformity</code>两种约束，符合对比学习的套路。在模型结构上呢分为两部分，<strong>Representation</strong> 部分用<code>Resnet50</code>提取特征，后面Projection是一层<code>MLP</code>。最终舍弃Projection层，只保留Representation网络</p>
+<p>如果没有Projection层，那么在对比损失函数中就是直接比较<code>Resnet50</code>提取的图像特征相似度，这会让正样本特征直接趋近，但正样本是同一图像数据增强得到的，这样得到的特征会损失数据增强相关的语义信息。例如一张猫的图片 旋转不同角度的图像特征相近，那就难以通过特征分布分辨猫的头是朝那边的了。加上一层<code>MLP</code>的话，正样本间就可能不需要特别趋近了，只要特征过<code>MLP</code>的结果趋近就行，一定程度上保留下了数据增强相关的语义信息</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611173910.png" style="zoom:67%;" />
+<p>下面讲<code>BYOL</code>，首先这篇工作follow了<code>simCLR</code>的架构，其次<code>DINO</code>的模型结构大体与<code>BYOL</code>一样，因此原理上只重点讲一下<code>BYOL</code>，它和<code>simCLR</code>最大的不同是没有负样本了，只利用正样本，正样本还是成对的，损失函数就是正样本间的<code>MSE</code>，但是还记得我们之前说过对比学习往往要靠负样本对特征施加<code>Uniformity</code>约束吗</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611174041.png" style="zoom:67%;" />
+<p>可以肯定的是，没有<code>Uniformity</code>的对比学习是容易模型坍塌的，也就是特征空间中所有样本点集中到一起，因为<code>Uniformity</code>是样本间的斥力，而<code>Alignment</code>是样本间的吸引力</p>
+<p>为什么<code>BYOL</code>能避免模型坍塌，这件事可能比较微妙，但很可能是<code>BYOL</code>中的非对称模型结构导致的，我认为主要有以下两点原因</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611174116.png" style="zoom:67%;" />
+<p>首先<code>BYOL</code>中一对正样本送入的两支网络不是同一个网络（<code>simCLR</code>中是同一个），而其中一支叫做<code>online network</code>（上面一支）<code>target</code>（下面），<code>target</code>作为辅助网络，最终只保留<code>online</code>的repersetation层.<code>online</code>是通过损失函数的梯度更新的，而<code>target network</code>在梯度计算中直接<code>detach</code>掉了，每次迭代<code>target </code>网络<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ξ</mi></mrow><annotation encoding="application/x-tex">\xi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.04601em;">ξ</span></span></span></span>会去直接照搬<code>online</code>网络的权重<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span></span></span>，但每次只会照搬一点点，也就是动量更新，其中每次更新中自身参数权重为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0.99</mn></mrow><annotation encoding="application/x-tex">0.99</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">9</span><span class="mord">9</span></span></span></span>，因此<code>target </code>网络可以看作是在和<code>online</code>网络同步训练，但更新速度远慢于<code>online</code>。由于随机初始化，<code>target</code>初始时特征分布是分散的，训练过程中<code>online</code>网络的特征分布不断地对<code>target</code>的特征分布进行拟合，而由于动量更新，<code>target</code>的特征分布改变的慢，因此起码在训练初期可以维持住一定的<code>Uniformity</code></p>
+<p>但是动量更新应该是无法完全避免模型坍塌的，如果<code>target </code>网络通过动量更新，其参数与<code>online</code>网络特别相近时，那就可以看作同一个网络，此时就和<code>simCLR</code>一样了，那肯定会有模型坍塌的问题，因此<code>BYOL</code>的关键可能在于引入了一个非对称的prediction层，这一层和projection一样也是普通的<code>MLP</code>。我们可以从以下角度理解这个改进，模型坍塌是说特征集中到同一点，或者说模型输出常数，因为只有<code>ALIgnment</code>约束的话这就是最优解，这样模型会没法继续更新。而多加入一层<code>MLP</code>的话模型训练时拟合的就是<code>online</code>的prediciton的分布与<code>target</code>的projection，那两支网络在projection层的分布就不一定相同，而projection层之前<code>target</code>网络参数是来源于<code>online</code>的，因此<code>target</code>网络肯定能继续更新（参数存在差异），上下两支网络就很难把最终的<code>Loss</code>降下来。可以把这个prediction理解成一种随机扰动，让上下两支网络难以陷入稳定的输出一致的状态</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611174259.png" style="zoom:67%;" />
+<p>然后来看<code>DINO</code>，<code>DINO</code>的话也是一个非对称结构，与<code>BYOL</code>不同，DINO<code>去掉</code>了prediciton，而是在<code>target</code>网络，也就是动量更新参数的那个网络上加入了一个<code>Centering</code>操作，实际上就是去均值，<code>target</code>网络会维护一个变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>是<code>target</code>网络所有输出的指数移动平均，<code>Centering</code>强行改变了target输出的分布，让<code>target</code>网络的输出减去均值<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>，<code>target</code>输出的特征分布便很难聚集到一点，<code>online</code>的输出分布又是需要去拟合<code>target</code>的，因此保证了最终模型的<strong>Uniformity</strong>。但是去均值操作可能让<code>target</code>输出接近均匀分布，这样<code>online</code>学到的输出也可能是均匀分布，那就没有意义了，因此<code>Centering</code>后接<code>softmax</code>放大输出中各维度的差异，<code>online</code>后也接<code>softmax</code>，<code>DINO</code>损失函数是两个<code>softmax</code>得到分布的交叉熵，效果也是拉近正样本间的距离</p>
+<p>以上就是<code>DINO</code>的架构原理，下面我们按写作顺序看看原文</p>
+<p>从文章标题<strong>Emerging Properties in Self-Supervised Vision Transformers</strong>看，这篇论文的工作就是把视觉<code>Transformer</code>模型和自监督结合起来。</p>
+<p>首先来看<code>motivation</code>，<code>ViT</code>一般比卷积网络参数量更大，训练时间更长，是数据驱动的模型，但有监督的<code>vit</code>学到的特征可能缺少可解释的特性。而在<code>NLP</code>中，<code>BERT</code>等模型通过自监督预训练，一定程度上可以表征更高层的语义信息，比如通过可视化注意力权重可证明模型学习到了句子上下文的关联，因此作者主要参考了视觉领域中的自监督学习的工作，这里主要引用了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>篇，<code>SwAV</code>, <code>simCLR</code>,<code>MOCO</code>,<code>BYOL</code>，都用的是对比学习，<code>DINO</code>改进了对比学习的网络结构，提出新的避免模型坍塌的方法，而且之前工作中represetation层一般用卷积网络，这里换成了ViT,是一个创新的地方</p>
+<p>而<code>Contribution</code>主要是，<code>DINO</code>通过自监督预训练使<code>ViT</code>学到了富含语义信息，而且适用于下游任务的特征。下面这个图中是将<code>ViT</code>的<code>class token</code>相关的注意力权重可视化的结果，可以看到ViT学到了场景布局、物体边界等空间结构上的语义。其次，将预训练的<code>ViT</code>用于<code>Imagenet</code>的分类任务上，特征分类器只用简单的<code>k</code>邻近就能达到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>78</mn></mrow><annotation encoding="application/x-tex">78</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span><span class="mord">8</span></span></span></span>的<code>acc</code>。最后作者强调了网络结构，具体改进前面说了，作者把他的对比学习方法强调为无标注的知识蒸馏，这也是<code>DINO</code>简称来源</p>
+<p>相关工作部分，作者首先讲了使用负样本的对比学习的缺点，那就是一个正样本要和足够的负样本去比较，不然<code>Uniformity</code>的约束肯定很弱，那就学不好，通常每个<code>batch</code>中不同图片互为负样本，那这就要<code>batch_size</code>足够匹配数据集大小，这种方法在大型数据集就会受限于<code>batch_size</code></p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611174552.png" style="zoom:67%;" />
+<p>作者将<code>DINO</code>的对比学习视为一种知识蒸馏，这一种不同视点的解释也更能支撑文章的方法吧。在这里，他将使用梯度更新的网络叫做<code>student</code>，动量更新的网络称为<code>teacher</code>，一般知识蒸馏是<code>student</code>拟合<code>teacher</code>，<code>teacher</code>是固定的。但这里<code>teacher</code>也是通过动量更新与<code>student</code>缓慢同步的，简单来说，<code>DINO</code>就是让模型不断从以前的自己学习，总结<code>student</code>学到的知识然后超越<code>teacher</code>，通过自我内卷让自己从无到有训练出一个好的<code>backbone</code>（<em>really?</em>）</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611174820.png" style="zoom:67%;" />
+<p>下一部分<code>Approach</code>，之前讲了原理，那就只看一下几个细节，作者提出方法的切入点是知识蒸馏，而知识蒸馏中通常用交叉熵损失函数拉近<code>student-teacher</code>的输出分布，所以<code>DINO</code>沿用了了交叉熵损失。第二，正样本在数据增强前都是通过随机裁剪获得，student网络使用大尺寸裁剪，<code>teacher</code>使用小尺寸，根据对比学习的方法论，我们可以鼓励模型学习到局部-全局视图下不变的特征。第三，不使用<code>BN</code>，因为<code>BYOL</code>这篇工作避免模型坍塌的机制被质疑是<code>BN</code>作用。<em>(但是<code>BN</code>有去均值，<code>centering</code>不就是近似去均值了么？)</em></p>
+<p>然后作者解释了防止模型坍塌的策略，这个之前讲过了，作者这里强调了一下<code>centering</code>中<code>teacher</code>的输出均值是动量更新的，那受<code>batch_size</code>影响就比较小，<code>batch_size</code>较小的话计算的均值偏差大，动量更新的话可以减小偏差对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>的影响</p>
+<p><code>Approach</code>的下半部分主要介绍了训练的具体实现，数据集是<code>Imagenet</code>的去标注数据，训练用的模型有<code>resnet50</code>, <code>vit-b</code>, <code>vit-s</code>，完成与训练后要在下游任务上对学到的特征进行评估，因为对于无监督或自监督，在下游任务中表现好预训练的特征才是好的特征，这里下游任务是<code>imagenet</code>验证集上的图像分类，后面实验中用了两种方法做这个下游任务,在预训练模型后接一个线性分类器，或k邻近分类，这两个分类头的区别在于线性分类器会<code>finetune</code>预训练模型，而<code>knn</code>无参数，不调整预训练参数。</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611175000.png" alt="" loading="lazy"></figure>
+<p>实验部分，作者为了给自己的<code>Contribution</code>提供支撑，也把结果分为两部分，首先在<code>imagenet</code>上验证ViT学到的特征适用于下游任务；其次分析了ViT学到的特征的语义。首先在<code>imagenet</code>上，作者与其他自监督工作的横向对比，使用相同的<code>backbone</code>网络<code>resnet50</code>时，<code>DINO</code>达到<code>SOTA</code>。在使用<code>Vit-s</code>时<em>outperforms BYOL, MoCov2 and SwAV by +3.5% with linear classification and by +7.9% with k-NN evaluation.</em></p>
+<p>另外作者的一点发现就是<code>DINO backbone</code>使用<code>vit-s</code>时<code>KNN</code>相比于<code>linear</code>准确率降得很少，那这说明<code>vit</code>学到的特征分布已经比较接近<code>ImageNet</code>验证集的数据分布了啊，所以<code>linear</code>这种有参数的分类器虽然可以缩小两者的<code>gap</code>,但提升效果更有限。所以作者认为<code>vit</code>学到的特征可能更适合直接比较特征的下游任务，因此还做了相关的后续实验。</p>
+<p>其次是<code>DINO</code>改用不同的<code>backbone</code>网络的纵向对比，相比于在<code>vit</code>中增加<code>Transformer</code>层数。这是很自然的结果，减小<code>vit</code>分割图块的大小的话<code>vit</code>将输入图片转换成的<code>token</code>序列就变长了，输入信息损失更少，更容易学到好的表征。这与<code>vit</code>原文中有监督任务一致，减小图块的大小提升模型性能。<em>(ViT-B/(8 × 8 patches) with DINO achieves 80.1% top-1 in linear and 77.4% with a k-NN classifier with 10× less parameters and 1.4× faster run time than previous SOTA(SCLRv2))</em></p>
+<p>在实验第二部分，作者试图解释<code>DINO</code>自监督的<code>viT</code>学到的特征的特性，一共是三个特性：一是特征直接用于检索，二是学习到了图像中物体位置的信息，三是到下游任务良好的可迁移性</p>
+<p>首先作者观察到<code>vit+kNN</code>在<code>IMAGENET</code>上的表现，<code>DINO</code>中<code>vit</code>学到的特征可能适合直接用于检索，在图像检索任务上使用<code>kNN</code>对<code>backbone</code>输出的特征进行检索，可以看到，使用<code>DINO</code>预训练时，<code>vit-S</code>在两个数据集上表现比有监督训练的好，另外作者强调自监督的优点在于可以用大量无标注数据进行训练，在换了个大型数据集后，<code>vit-s</code>的平均准确度接近了有监督的<code>resnet101</code></p>
+<p><code>DINO+viT</code>的第二个特征是能学到图像的结构信息，<code>vit</code>中把输入图像的所有<code>patch</code>转成<code>token</code>序列后，会再加入一个<code>class token</code>， 最终输出为通过<code>transformer encoder</code>的<code>class token</code>，所以<code>class token</code>与其他<code>patch</code>的注意力分数就体现了<code>vit</code>最终输出的特征更注意原图中哪些位置，把注意力分数还原到每个<code>patch</code>对应的位置，然后可视化得到一个<code>self-attention map</code>，可以看到这个<code>map</code>明显体现了原图的空间结构，所以作者认为<code>viT</code>的特征适合做图像分割任务，甚至这种可视化的<code>self-attention map</code>也可以用来直接做分割任务。【<code>vit</code>原文中用的是 <code>attention rollout</code>算法可视化<code>attention map</code>】</p>
+<p>于是作者首先利用<code>DINO</code>预训练的<code>vit</code>，在<code>DAVIS-2017</code>数据集上做视频实例分割任务，作者说只直接利用连续帧的特征做分割，不对预训练模型<code>finetune</code>，结果<code>Vit-s/8</code>比有监督方法还要好，足以说明<code>DINO</code>中的<code>vit</code>确实学到了一些空间结构信息</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611175432.png" style="zoom:67%;" />
+<p>然后作者又对<code>vit</code>的<code>self-attention map</code>做了一些其他实验，首先<code>class token</code>与其他<code>patch</code>的注意力分数之和为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，作者只保留部分<code>patch</code>，使其注意力分数之和不超过<code>0.6</code>，保留的<code>patch</code>直接作为图像分割的<code>mask</code>。这样做的话，在<code>PASCAL VOC12</code>数据集上，<code>DINO</code>自监督预训练的的<code>vit-s</code>甚至比直接有监督图像分割的性能好</p>
+<img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230611175525.png" style="zoom:67%;" />
+<p>其次我们刚才可视化的是<code>class token</code>在所有注意力头上与其他<code>patch</code>的注意力分数，接下来作者把 每个自注意力头对应的<code>self-attention map</code>用不同颜色绘制后叠加，可以看到不同<code>attention head</code>注意的是图像不同的部分，佐证了<code>dino</code>可以引导模型学习一些高层的语义。</p>
+<p><code>DINO+viT</code>的第三个特征是能学到迁移性好的特征，因为自监督的对比学习中，模型训练中不以人为定义的<code>label</code>为导向，学到的可能是更通用的语义信息。为在一开始的实验中，<code>DINO</code>的<code>viT</code>是在去除标注的<code>imagenet</code>训练集预训练的，而下游任务是<code>imagenet</code>验证集上的图像分类，同源数据说明不了预训练模型的可迁移性，所以作者有针对这一点做了新的实验，同样是<code>imagenet</code>上预训练<code>vit</code>，但在不同数据集上微调模型做下游任务，结论是<code>DINO</code>比起有监督预训练在不同下游任务的泛化性更强，指标上基本高<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>∼</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1\sim 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>个点。</p>
+<p>最后是两个消融实验,首先作者想证明<code>DINO</code>网络结构中各个部分的有效性，于是对比了几种<code>DINO</code>结构的变种，加上参考工作中的结构或是删除原有部分。可以看出对于提升预训练效果比较关键的部分是<code>DINO</code>默认使用的交叉熵<code>loss</code>，以及对正样本采用不同尺寸的裁剪。不使用动量更新的策略时，发生了模型坍塌，所以无负样本对比学习的一个关键可能是构造非对称的网络结构,另外就是验证了减小<code>vit</code>中图块的大小能提升模型自监督训练的效果</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DML-BDI实验室指北]]></title>
+        <id>https://zixfy.github.io/post/dml-bdi-shi-yan-shi-zhi-bei/</id>
+        <link href="https://zixfy.github.io/post/dml-bdi-shi-yan-shi-zhi-bei/">
+        </link>
+        <updated>2023-06-09T07:35:34.000Z</updated>
+        <summary type="html"><![CDATA[<center><b>#只身打马过草原</b></center>
+]]></summary>
+        <content type="html"><![CDATA[<center><b>#只身打马过草原</b></center>
+<!-- more -->
+<p>（本站图床托管于<code>Github</code>，可能被屏蔽）</p>
+<h3 id="ssh">SSH</h3>
+<h4 id="ssh软件">SSH软件</h4>
+<ul>
+<li>类Unix: <code>shell</code>内的<code>ssh</code>命令</li>
+<li>Windows: <code>cmd</code>内的<code>ssh</code>命令（win10/11自带<code>openssh</code>），或<code>WindowsTerminal</code>/<code>Putty</code>/<code>Xshell</code>/<code>WSL</code>等软件，选个好看的</li>
+<li>Android:华为云等软件</li>
+<li>iOS:<code>xTerm256</code>, <code>Termius</code>等软件</li>
+</ul>
+<h4 id="公钥免密登录">公钥免密登录</h4>
+<ol>
+<li>（401服务器<code>ssh</code>密码方式登录已禁用，2023.3）</li>
+<li>看<code>cat ~/.ssh/id_rsa.pub</code>(<code>type \path\to\windows-user\.ssh\id_rsa.pub</code>)是否存在，没有使用<code>ssh-keygen</code>命令生成公钥</li>
+<li>让管理员将<code>id_rsa.pub</code>中内容追加到<code>gaia.buaadml.info:/home/myUserName/.ssh/authorized_keys</code>中以免密登录</li>
+<li>修改用户密码:<code>ldap</code>管理员后台</li>
+</ol>
+<p><strong>注意</strong>，无法<code>ssh</code>登录时，请在<code>ssh</code>末尾追加<code>-v</code>选项，将报错信息发送而给<code>admin</code></p>
+<h3 id="nfs">NFS</h3>
+<h4 id="网络文件系统">网络文件系统</h4>
+<ul>
+<li>简单地说，<code>gaia</code>上<code>/home</code>目录挂载的是物理磁盘，计算节点上<code>/home</code>目录是通过<code>NFS</code>文件协议用<code>TCP</code>同步共享<code>gaia.buaadml.info:/home</code>的，因此高<code>I/O</code>，低计算的任务，如下载，请尽量使用gaia机器</li>
+<li><code>NFS</code>没设<code>intr</code>选项(2023.3)，所以理论上切换目录无限等待且不能<code>Ctrl^C</code>中断(<code>SIGINT</code>)可能是<code>NFS</code>问题（我个人在别的服务器上见过这种情况）</li>
+</ul>
+<pre><code class="language-bash">(base) zhaozixuan at gaia in ~  
+$ mount | grep '/dev/sd'
+#/dev/sda2 on / type ext4 (rw,relatime,data=ordered)
+#/dev/sda1 on /boot/efi type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+#/dev/sdb on /home type ext4 (rw,relatime,stripe=64,data=ordered)
+</code></pre>
+<pre><code class="language-bash">(base) zhaozixuan at jack in ~    
+$ mount | grep '/home'
+#buaadml.info:/ on /home type nfs4 (rw,relatime,vers=4.0,rsize=8192,wsize=8192,namlen=255,hard,proto=tcp,port=2041,timeo=14,retrans=2,sec=sys,clientaddr=10.134.139.116,local_lock=none,addr=10.134.138.250,_netdev)
+</code></pre>
+<h4 id="更多参考">更多参考</h4>
+<p><a href="http://cn.linux.vbird.org/linux_server/0330nfs_1.php">鸟哥的 Linux 私房菜 -- NFS 服务器</a></p>
+<h3 id="file-transfer">File Transfer</h3>
+<h4 id="命令行">命令行</h4>
+<ul>
+<li><code>wget</code>:通过url下载文件</li>
+<li><code>scp</code>/<code>rsync</code>:个人机器/实验室服务器互传文件目录</li>
+<li><code>curl</code>:http报文</li>
+</ul>
+<h4 id="sftp协议软件推荐">sftp协议软件（推荐）</h4>
+<p>推荐根据自己的<code>IDE</code>,如<code>VSCode</code>,<code>JetBrains</code>系（自带）,安装可视化<code>sftp</code>插件管理服务器文件</p>
+<h3 id="linux-command">Linux Command</h3>
+<pre><code class="language-bash">1. man COMMAND / COMMAND -h/ COMMAND --help
+# 查看某一命令COMMAND之说明
+2. Ctrl^C
+# 向进程发送SIGINT
+3. Ctrl^D
+# 退出shell/退出su切换到的用户/断开ssh
+4. Ctrl^Z
+# 挂起命令进程，jobs查看挂起进程
+5. cd -
+# 返回上次访问目录
+6. grep &quot;mykeyword&quot;
+# 查找关键字 
+7. history | tail -n 50
+# 最后50条历史命令 
+8. alias
+#为命令起别名，如 
+alias jack='ssh zhaozixuan@jack.buaadml.info'
+9. alias
+# 覆写命令对应程序的绝对路径，如 
+alias cmake='/path/to/my/own/cmake'
+#但不建议alias python='/usr/bin/python3'，因为alias python可能会覆盖conda虚拟环境的python
+10. chomd [-r]/ chown
+# 更改文件（目录）权限（归属用户/用户组）
+11. tail [-f] [-n &lt;number&gt;]
+# 查看文件最后&lt;number&gt;行，-f为实时刷新，适合查看志记文件
+12. which COMMAND
+# 查看命令对应程序位置， 如which pip3, which python
+</code></pre>
+<h4 id="文件权限与chmod">文件权限与chmod</h4>
+<p><a href="https://www.runoob.com/linux/linux-comm-chmod.html">link</a></p>
+<h4 id="更多参考-2">更多参考</h4>
+<p><a href="https://www.man7.org/linux/man-pages/">man-page</a>, <a href="https://book.douban.com/subject/35933905/">Linux命令行与shell脚本编程大全（第4版）</a></p>
+<h3 id="vim">Vim</h3>
+<p><code>vim</code>三模式：一般模式，命令行模式，编辑模式，使用<code>vi/vim</code>进入文件时是一般模式</p>
+<h4 id="编辑模式">编辑模式</h4>
+<p>一般模式下，进入编辑模式</p>
+<p><code>i</code>   光标前插入</p>
+<p><code>a</code>    光标后插入</p>
+<p><code>o</code>    光标下一行插入</p>
+<h4 id="命令行模式">命令行模式</h4>
+<p>一般模式下，进入命令行模式：<code>:</code>, <code>/</code></p>
+<p><code>:num</code> 跳至第<code>num</code>行，<code>num=&quot;$&quot;</code>时跳至文件尾</p>
+<p><code>:set filetype=c</code> 代码文件后缀与语言不一致时显式指引<code>vim</code>进行正确的语法高亮</p>
+<p><code>:q</code>  退出 <code>vi</code></p>
+<p><code>:q!</code>  强制退出，不保存文件</p>
+<p><code>:wq</code>  保存文件并退出</p>
+<p><code>/str</code>  从光标处向文件尾部搜索，查找 <code>&quot;str&quot;</code> 字符串，<code>n</code>/<code>N</code> 查看下/上一个位置</p>
+<p><code>?str</code>  从光标处向文件首部搜索，查找 <code>&quot;str&quot;</code> 字符串，<code>n</code>/<code>N</code>查看下/上一个位置</p>
+<p><code>:s/str1/str2/g</code>  将当前行中所有的 <code>&quot;str1&quot;</code>，均用 <code>&quot;str2&quot;</code> 替换</p>
+<p><code>:s/str1/str2/gc</code>  将当前行中所有的 <code>&quot;str1&quot;</code>，均用 <code>&quot;str2&quot;</code> 替换， 替换时需要确认</p>
+<p><code>:%s/str1/str2/g</code>  将文件中所有的  <code>&quot;str1&quot;</code>，均用 <code>&quot;str2&quot;</code> 替换</p>
+<p><code>:%s/str1/str2/gc</code>  将文件中所有的  <code>&quot;str1&quot;</code>，均用 <code>&quot;str2&quot;</code> 替换，替换时需要确认</p>
+<h4 id="一般模式">一般模式</h4>
+<p>其他模式下，进入命令行模式：<code>Esc</code></p>
+<p><code>gg</code>  光标移动到文档头部</p>
+<p><code>G</code>  光标移动到文档尾部</p>
+<p><code>ngg</code>  光标移动到第 <code>n</code> 行头部</p>
+<p><code>n+</code>  光标向下移动 <code>n</code> 行</p>
+<p><code>n-</code>  光标向上移动 <code>n</code> 行</p>
+<p><code>0</code>  光标移动到当前行行首</p>
+<p><code>$</code>  光标移动到当前行行尾</p>
+<p><code>w</code>  光标移动到下一个字的开头</p>
+<p><code>b</code>  光标移动到上一个字的开头</p>
+<p><code>fx</code>  光标移动到 当前行下一个字母<code>x</code>的位置</p>
+<p><code>yy</code>  复制当前行（<code>Vim</code>内部剪贴板）</p>
+<p><code>nyy</code>  复制当前行及下面的 <code>n-1</code> 行</p>
+<p><code>p</code>  粘贴（<code>Vim</code>内部剪贴板）</p>
+<p><code>x</code>  删除光标后一个字符</p>
+<p><code>X</code>  删除光标前一个字符</p>
+<p><code>nx</code>  删除光标后 <code>n</code> 个字符</p>
+<p><code>nX</code>  删除光标前 <code>n</code> 个字符</p>
+<p><code>d0</code>  从光标处删到行首</p>
+<p><code>d$</code>  从光标处删到行尾</p>
+<p><code>dd</code>  删除光标所在行</p>
+<p><code>ndd</code>  删除光标所在行及其后 <code>n-1</code> 行</p>
+<p><code>u</code>  撤销一步操作</p>
+<p><code>v</code> <code>visual</code>模式，相当于鼠标拖动选取之操作，选择完后<code>y</code>复制,<code>x</code>剪切</p>
+<h4 id="vim-配置文件">Vim 配置文件</h4>
+<p><code>bashvim ~/.vimrc</code><br>
+追加：</p>
+<pre><code class="language-bash">syntax enable #开启语法高亮
+set nu #开启行号显示
+#set compatible 平等对待Vi/Vim指令
+# 或者
+#set nocompatible 不与 Vi 兼容（采用 Vim 自己的操作命令）。
+set showmode #显示当前模式
+set showcmd #命令行模式下显示键入的命令
+#set shiftwidth=4
+#set softtabstop=4 缩进设置，自行了解
+set cursorline #高亮显示当前行
+set ruler #显示光标
+set showmatch #左右匹配括号高亮
+set incsearch #启用'/'命令行模式的增量搜索，也就是每键入一个字符都会重新搜索字符串，通常可以更快搜索到结果
+set mouse=a #开启鼠标控制（滚轮与鼠标控制`visual`模式的选取）
+#...e.t.c.
+</code></pre>
+<p>刷新配置：重启<code>vim</code>进程，或命令行模式下<code>:source ~/.vimrc</code></p>
+<p>注意：以上每行配置都可在<code>:</code>命令模式下对当前文件设置，设置仅对当前打开文件对应的<code>vim</code>进程有效</p>
+<h3 id="shell">SHELL</h3>
+<h4 id="bashzshfishetc">bash/zsh/fish/etc...</h4>
+<p><code>shell</code>就是<code>ssh</code>登上去的黑框框，这个与我们交互的进程通常默认是<code>bash</code>，<code>zsh</code>是另一种交互式终端，但在使用上基本与<code>bash</code>无区别，优点在于完善，高度可定制的插件机制，用来提高我们的效率。为了减少烦人的敲<code>shell</code>命令的时间，一些插件如自动补全与高亮是必要的，但<code>shell</code>的配置/插件修改比较麻烦，<code>zsh</code>的<code>oh-my-zsh</code>框架可以大大简化这个过程</p>
+<h4 id="zsh-oh-my-zsh推荐">zsh &amp; oh-my-zsh（推荐）</h4>
+<p>以<code>oh-my-zsh</code>添加自动补全与语法高亮这两个常用插件为例</p>
+<pre><code class="language-bash">#1.进入zsh 
+zsh
+#2.安装oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+vim ~/.zshrc, &quot;ZSH_THEME=...&quot; #这一行可以自己修改成好看点的主题
+#3.插件安装
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+vim ~/.zshrc #修改插件列表，plugins变量：plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source ~/.zshr #刷新配置
+</code></pre>
+<p>应该有补全效果了(按右箭头补全)</p>
+<h4 id="prompt修改">PROMPT修改</h4>
+<p><code>PROMPT</code>指的是每次<code>shell</code>等待输入时打印的信息，<code>oh-my-zsh</code>是高度定制的，以最简单的<code>PROMPT</code>修改为例</p>
+<p>1.显示<code>conda</code>环境名，直接使用<code>conda</code>之命令行</p>
+<pre><code class="language-bash">conda init zsh
+</code></pre>
+<p>2.以<code>steeef</code>主题为例添加一个实时时间显示为例</p>
+<pre><code class="language-bash">vim ~/.zshrc
+</code></pre>
+<h4 id="修改zsh_themesteeef">修改ZSH_THEME=&quot;steeef&quot;</h4>
+<p><code>bashvim ~/.oh-my-zsh/themes/steeef.zsh-theme</code></p>
+<pre><code class="language-bash">#追加
+if [[ $terminfo[colors] -ge 256 ]]; then
+    turquoise=&quot;%F{81}&quot;
+    orange=&quot;%F{166}&quot;
+    purple=&quot;%F{135}&quot;
+    hotpink=&quot;%F{161}&quot;
+    limegreen=&quot;%F{118}&quot;
+    violet=&quot;%F{205}&quot;
+    darkorange=&quot;%F{208}&quot;
+    cyan=&quot;%F{51}&quot;
+else
+    turquoise=&quot;%F{cyan}&quot;
+    orange=&quot;%F{yellow}&quot;
+    purple=&quot;%F{magenta}&quot;
+    hotpink=&quot;%F{red}&quot;
+    limegreen=&quot;%F{green}&quot;
+    violet=&quot;%F{violet}&quot;
+    darkorange=&quot;%F{darkorange}&quot;
+    cyan=&quot;%F{cyan}&quot;
+fi
+#修改PROMPT
+PROMPT=$'%{$darkorange%}%n${PR_RST} at %{$violet%}%m${PR_RST} in %{$cyan%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)    %{$FG[040]%}%D{%Y/%m/%d} - %*%{$reset_color%}
+$ '
+</code></pre>
+<p>以上操作修改了<code>PROMPT</code>的颜色，添加了当前时间</p>
+<pre><code class="language-bash">vim ~/.zshrc
+#追加
+TMOUT=1
+TRAPALRM () 
+{ zle reset-prompt }
+</code></pre>
+<p>以上操作使得<code>PROMPT</code>每秒刷新一次，以显示实时时间</p>
+<pre><code class="language-bash">source ~/.zshrc
+</code></pre>
+<p>刷新配置后生效</p>
+<p>当然也有其他很多主题，如<code>powerline10k</code>， <code>random</code>，注意，你的终端需要支持主题相关的<strong>字体与彩显</strong>，否则会有显示上的错误</p>
+<h4 id="修改默认shell">修改默认SHELL</h4>
+<ul>
+<li>现有账户默认<code>shell</code>均为<code>bash</code>（2023.3）</li>
+<li>在<code>~/.profile</code>追加启动指定<code>shell</code>的命令并没有真正改变默认<code>shell</code>，而是在启动<code>bash</code>时自动执行一条进入指定<code>shell</code>的命令，例如此时<code>exit</code>将回到<code>bash</code>，而不是关闭<code>shell</code></li>
+<li><code>chsh</code>/<code>usermode</code>指令并不能修改默认<code>shell</code>，因为大家的<code>linux</code>系统账户不是在节点机器本地管理，而是通过<code>VM chaos</code>提供的<code>ldap</code>协议服务管理，因此需要联系管理员在<code>chaos</code>之<code>phpLDAPadmin</code>上修改默认<code>shell</code>启动路径</li>
+</ul>
+<h3 id="windows-subsystem-for-linux">Windows Subsystem for Linux</h3>
+<p>不喜欢Win的<code>cmd</code>就装个<code>wsl</code>吧，比虚拟机软件更轻量，且自然地共存，可无缝切换的双系统方案</p>
+<h4 id="wsl10">WSL1.0</h4>
+<p>没有使用真正的<code>Linux</code>内核，实际是把<code>Linux</code>内核的系统调用转换成<code>Win</code>的系统调用</p>
+<p>（所以慎重选择<code>WSL1.0</code>作为开发用环境）</p>
+<h4 id="wsl20">WSL2.0</h4>
+<p><code>Hyper-V</code>硬件虚拟化实现<code>Linux</code>内核，可以简单理解为虚拟机</p>
+<h4 id="wsl网络">WSL网络</h4>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/networking">link</a></p>
+<h4 id="wsl桌面">WSL桌面</h4>
+<p><em>Note: this section is a copy of <a href="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.html">https://liyirui-git.github.io/</a></em></p>
+<ol start="0">
+<li>准备工作</li>
+</ol>
+<p>我使用的是<code>Windows</code>应用商店中的<code>Ubuntu 18.04 LTS</code>，安装完成以后，为了提高软件包下载速度，一般是要把软件库更换成清华开源镜像：<code>Ubuntu</code>清华开源镜像。</p>
+<p>更换好以后，先执行下面的命令，更新<code>apt</code>：</p>
+<pre><code class="language-bash">$ sudo apt update
+$ sudo apt upgrade
+</code></pre>
+<ol>
+<li>安装图形化界面<br>
+这里使用的是<code>xfce4</code>，安装命令为：</li>
+</ol>
+<pre><code class="language-bash">$ sudo apt install xfce4
+</code></pre>
+<p>它的优点主要是占用空间小，此外该界面主要是有一个图形界面可以使用<code>spacemacs</code>。</p>
+<p>然后安装<code>xrdp</code>：</p>
+<pre><code class="language-bash">$ sudo apt install xrdp
+</code></pre>
+<ol start="2">
+<li>软件配置<br>
+配置<code>xrdp</code>端口</li>
+</ol>
+<pre><code class="language-bash">$ sudo sed -i 's/port=3389/port=3390/g' /etc/xrdp/xrdp.ini
+</code></pre>
+<p>端口号要记住，后面从<code>windows</code>进行连接的时候要用到。这里面 <code>3389</code> 是默认配置，这里将其改为 <code>3390</code> 是避免和 <code>windows</code> 的端口冲突。因为两边的端口号是通的，在 <code>wsl</code> 中开一个 <code>8080</code> 端口的 <code>WebServer</code>，在 <code>windows</code> 可以直接访问。</p>
+<p>配置<code>xsession</code></p>
+<pre><code class="language-bash">$ sudo echo xfce4-session &gt;~/.xsession
+#这一步其实是在告诉系统，开启桌面环境的时候开启什么桌面环境。
+</code></pre>
+<p>启动 <code>xrdp</code></p>
+<pre><code class="language-bash">$ sudo service xrdp restart
+</code></pre>
+<ol start="3">
+<li><code>Windows</code>远程连接<br>
+打开<code>Windows</code>中的“远程桌面连接” （快捷方式是 <code>win+r</code> 输入<code>“mstsc”</code>）</li>
+</ol>
+<p>在计算机名的地方输入本地的<code>3390</code>端口，用户名输入<code>root</code>，如下图：</p>
+ <img src="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.assets/image-20200809160433004.png" style="zoom:50%;" />
+<p>进入以后会显示一个小的对话框：</p>
+<figure data-type="image" tabindex="1"><img src="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.assets/image-20200809161018388.png" alt="" loading="lazy"></figure>
+<p>这个时候点击“ok”，会弹出填写用户名和密码的对话框，填写对应的用户名和密码：</p>
+<figure data-type="image" tabindex="2"><img src="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.assets/image-20200809161159946.png" alt="" loading="lazy"></figure>
+<p>点击OK即可登录到可视化界面：</p>
+<figure data-type="image" tabindex="3"><img src="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.assets/20190621201436773.png" alt="" loading="lazy"></figure>
+<p>如果WSL的Ubuntu系统关闭，如关机重启，会导致远程连接不上，此时需要先在Win10中打开Ubuntu的命令行界面，输入：</p>
+<pre><code class="language-bash">$ sudo service xrdp restart
+</code></pre>
+<p>此时再远程连接，即可连接上。</p>
+<figure data-type="image" tabindex="4"><img src="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/WSL+Linux%E5%8F%AF%E8%A7%86%E5%8C%96%E7%95%8C%E9%9D%A2.assets/762700-20171116183439656-1751821230.png" alt="" loading="lazy"></figure>
+<ol start="4">
+<li>尾声<br>
+后续还看到一个特别牛批的大神做的：<code>WSL</code>使用小结：<a href="https://www.cnblogs.com/wurui1994/p/7839777.html">从ArchLinux到Manjaro</a>，以及知乎的问题：<a href="https://www.zhihu.com/question/355179099">Deepin Linux上架WSL要多久?</a>，<a href="https://zhuanlan.zhihu.com/p/51270874">知乎文章：利用WSL打造Arch开发环境</a></li>
+</ol>
+<p>后续可以继续折腾。</p>
+<p><em>Note: End of the copy</em></p>
+<h3 id="windows-terminal">Windows Terminal</h3>
+<p>微软官方的终端软件：<a href="https://learn.microsoft.com/zh-cn/windows/terminal/install">link</a></p>
+<p><code>Windows Terminal</code>相比于<code>cmd</code>:1.好看 2.整合<code>cmd</code>/<code>powerShell</code>/<code>WSL</code>/<code>git bash</code>等需要终端显示的场景，集中终端配置</p>
+<h4 id="以windows-terminal配置sshwsl发起为例">以Windows Terminal配置ssh（WSL发起）为例</h4>
+<ul>
+<li>安装<code>wsl</code>与<code>Windows Terminal</code>，记不太清了，但好像<code>Windows Terminal</code>会自动检测<code>WSL</code>并为其生成默认配置文件</li>
+<li><code>Windows Terminal -&gt; Settings</code>，从<code>WSL</code>的配置文件复制一份配置文件，修改<code>Command line</code>，追加进行<code>ssh</code>连接的命令（注意，这里的命令大概是在<code>shell</code>配置文件之前执行的，因此不要依赖<code>~/.bashrc</code>或<code>~/.zshrc</code>创建的环境变量）</li>
+</ul>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222226.png" alt="" loading="lazy"></figure>
+<h3 id="tmux推荐">Tmux（推荐）</h3>
+<p><code>ssh</code>默认长时间不操作会断开，为了防止耗时操作中<code>ssh</code>终端断开，可以修改<code>/etc/ssh/ssh_config</code>定时向服务器发报文保活，或者使用<code>autossh</code>等软件</p>
+<p>不过更推荐<code>Tmux</code>，<code>Tmux</code>是在服务器本地创建多个<code>shell</code>交互界面，所以不受<code>ssh</code>连接生命期之影响，可以挂在后台，不用担心<code>ssh</code>断了或者卡死<code>shell</code>就中断了导致前台进程挂掉，而且可以灵活切换多个<code>SHELL</code>界面</p>
+<p><code>Tmux</code>中两个主要概念是<code>sessions</code>与<code>windows</code>，简单地说，可以对应于<strong>带图形用户界面的操作系统</strong>中的<strong>桌面</strong>与<strong>应用窗口</strong>，一个<code>windows</code>对应一个<code>shell</code>进程，一个<code>sessions</code>持有一个或多个<code>windows</code>。</p>
+<p>使用<code>tmux</code>指令将新建一个<code>session</code>，<code>tmux rename mySessionName</code>（在当前<code>session</code>下）将为<code>session</code>命名，不然默认就是数字序号。进入<code>tmux</code>后按一次<code>Ctrl^B</code>进入命令模式，<code>Ctrl^B</code>后按<code>D</code>键将当前<code>session</code> <code>detach</code>掉，也就是挂在后台，这将退回到原来的<code>shell</code>（<strong>注意</strong>，<code>tmux</code>创建的<code>shell</code>中使用<code>exit</code>或<code>Ctrl^D</code>仍然将杀死<code>shell</code>，而不是把他挂在后台运行）。使用<code>tmux ls</code>看当前所有<code>session</code>，使用<code>tmux a -t mySessionName</code>回到<code>session</code>，使用<code>tmux kill-session -t mySessionName</code>关闭后台<code>session</code>，也可以进入<code>tmux session</code>后 <code>Ctrl^B</code>后按<code>S</code>查看所有<code>session</code>，并可以选择切换</p>
+<p><code>tmux session</code>中，默认只有一个全屏的<code>window</code>，<code>Ctrl^B</code>接<code>%</code>把当前<code>window</code>左右分割成两个<code>window</code>，<code>Ctrl^B</code>接&quot;把当前<code>window</code>上下分割，<code>Ctrl^B</code>接方向键切换聚焦的<code>window</code>，<code>Ctrl^B</code>接<code>Ctrl^方向键</code>调整<code>window</code>尺寸</p>
+<p><code>Ctrl^B</code>接<code>[</code>可以上下滚动<code>shell</code>输出</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222244.png" alt="" loading="lazy"></figure>
+<p>对tmux进行设置</p>
+<ul>
+<li>生成配置文件 <code>vim ~/.tmux.conf</code></li>
+<li>写入内容</li>
+</ul>
+<pre><code class="language-bash">set -g default-terminal &quot;screen-256color&quot;
+# 开启xTerm256彩色显示
+set -g default-shell /bin/zsh
+# 设置默认SHELL
+set-option -g mouse on
+# 开启鼠标控制
+</code></pre>
+<ul>
+<li>注意：鼠标控制的<code>tmux</code>下，按住<code>shift</code>以鼠标框选，<code>Ctrl^shift^c/v</code>以复制粘贴</li>
+<li>配置可热修改，使用<code>tmux source-file ~/.tmux.conf</code>生效配置</li>
+</ul>
+<h4 id="更多参考-3">更多参考</h4>
+<p><code>man tmux</code> or <a href="https://www.man7.org/linux/man-pages/man1/tmux.1.html">link</a></p>
+<h3 id="screen">Screen</h3>
+<p>类似的终端复用器还有 <code>GNU Screen</code>。<code>Tmux</code> 与它功能相似，但是通常来说<code>Tmux</code>更易用，也更强大。</p>
+<p><em>Note: This section is a copy of <a href="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html"> yirui的实验室服务器使用指南</a></em></p>
+<h4 id="screen基础">Screen基础</h4>
+<p>可以通过创建一个屏幕来实现后台运行，新建一个屏幕的命令是：</p>
+<pre><code class="language-bash">$ screen -S [screen-name]  
+</code></pre>
+<p>查看当前所有屏幕的列表的命令是：</p>
+<pre><code class="language-bash">$ screen -ls
+</code></pre>
+<p>进入某一个屏幕的命令是：</p>
+<pre><code>bash$ screen -r [screen-name]
+</code></pre>
+<p>kill一个屏幕的命令是在该屏幕中输入：</p>
+<pre><code class="language-bash">$ exit
+</code></pre>
+<p>Screen退出当前窗口但不杀死<br>
+<code>ctrl + a + d</code> 这一操作也叫<code>detached</code></p>
+<p><code>Screen</code>杀死会话窗口<br>
+如果想关掉一个多余的窗口，有3种方法：</p>
+<p><code>kill -9 threadnum </code>例如在上面的2637，<code>kill -9 2637</code> 即可杀死线程，当然就杀死了窗口</p>
+<p>使用<code>Ctrl a +k</code> 杀死当前窗口和窗口中运行的程序</p>
+<p>使用<code>Ctrl a</code> 然后输入<code>quit</code>命令退出<code>Screen</code>会话。需要注意的是，这样退出会杀死所有窗口并退出其中运行的所有程序</p>
+<p><code>Screen</code>清除死去的窗口<br>
+当窗口被杀死后，再用<code>screen -ls</code> 可以看到该窗口后面的(???dead)字样，说明窗口死了，但是仍在占用空间。这时需要清除窗口</p>
+<pre><code class="language-bash">$ screen -wipe #自动清除死去的窗口
+</code></pre>
+<p>这样的窗明几净了~</p>
+<p><code>Screen</code>意外掉线重连<br>
+有的时候，意外断开连接，再次进入某个screen会出现以下报错：</p>
+<pre><code class="language-bash">(base) xxxx@i:~$ screen -r fastreid
+There is a screen on:
+        3157.fastreid   (2021年02月19日 15时19分14秒)   (Attached)
+There is no screen to be resumed matching fastreid.
+</code></pre>
+<p>这个时候是因为它认为还有人在与screen连接，所以连接不上，这个时候，可以通过下面的命令，让screen与之前的连接断开，然后我们再连进去</p>
+<pre><code class="language-bash">$ screen -D -r fastreid
+</code></pre>
+<p>如何记录<code>screen</code>屏幕日志</p>
+<p>第一种方法</p>
+<p>启动时添加选项<code>-L</code>（Turn on output logging.）会在当前目录下生成<code>screenlog.0</code>文件。</p>
+<pre><code class="language-bash">screen -L -dmS test
+1
+</code></pre>
+<p><code>screen -L -dmS test</code>的意思是启动一个开始就处于断开模式的会话，会话的名称是<code>test</code>。<br>
+<code>screen -r test</code>连接该会话，在会话中的所有屏幕输出都会记录到<code>screenlog.0</code>文件。</p>
+<p>第二种方法</p>
+<p>不加选项<code>-L</code>，启动后，在<code>screen session</code>下按<code>ctrl+a H</code>，同样会在当前目录下生成<code>screenlog.0</code>文件。</p>
+<p>第一次按下<code>ctrl+a H</code>，屏幕左下角会提示<code>Creating logfile &quot;screenlog.0&quot;.</code>，开始记录日志。<br>
+再次按下<code>ctrl+a H</code>，屏幕左下角会提示<code>Logfile &quot;screenlog.0&quot; closed.</code>，停止记录日志。<br>
+补充<br>
+上面两个方法有个缺点：当创建多个<code>screen</code>会话的时候，每个会话都会记录日志到<code>screenlog.0</code>文件。<code>screenlog.0</code>中的内容就比较混乱了。</p>
+<p>解决方法如下，让每个<code>screen</code>会话窗口有单独的日志文件。</p>
+<p>在<code>screen</code>配置文件<code>/etc/screenrc</code>最后添加下面一行：</p>
+<pre><code class="language-bash">logfile /tmp/screenlog_%t.log
+1
+</code></pre>
+<p><code>%t</code>是指<code>window</code>窗口的名称，对应<code>screen</code>的<code>-t</code>参数。所以我们启动screen的时候要指定窗口的名称，例如：</p>
+<pre><code class="language-bash">screen -L -t window1 -dmS test
+1
+</code></pre>
+<p><code>screen -L -t window1 -dmS test</code>的意思是启动test会话，test会话的窗口名称为window1。屏幕日志记录在<code>/tmp/screenlog_window1.log</code>。如果启动的时候不加-L参数，在screen session下按<code>ctrl+a H</code>，日志也会记录在<code>/tmp/screenlog_window1.log</code></p>
+<p><strong>注意</strong>，如果写成：<code>logfile ./screenlog_%t.log</code> 则是把日志文件记录到当前目录下。</p>
+<p>一个例子</p>
+<pre><code class="language-bash">screen -L -t name -S name ./name
+1
+</code></pre>
+<p>第一个name是记录日志的名字<br>
+第二个name是<code>screen -ls</code> 列表展示出来的名字<br>
+第三个name是需要运行的程序</p>
+<p><em>Note: End of the copy</em></p>
+<h4 id="更多参考-4">更多参考</h4>
+<p><code>man screen</code> or <a href="https://man7.org/linux/man-pages/man1/screen.1.html">link</a></p>
+<h3 id="linux-daemon">Linux Daemon</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9377123"><label class="task-list-item-label" for="task-item-9377123"> #TODO</label></li>
+</ul>
+<h3 id="crontab">crontab</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8006655"><label class="task-list-item-label" for="task-item-8006655"> #TODO</label></li>
+</ul>
+<h3 id="gpu">GPU</h3>
+<h4 id="nvidia显卡信息查看">Nvidia显卡信息查看</h4>
+<pre><code class="language-bash">watch -n 5 'nvidia-smi'
+# or
+nvidia-smi
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">watch -n 5 'curl gpu.buaadml.info' 
+# or
+curl gpu.buaadml.info
+# 输出格式参考python第三方库gpustat
+# or visit http://gpu.buaadml.info
+</code></pre>
+<h4 id="显驱与cuda安装卸载">显驱与CUDA安装/卸载</h4>
+<p>英伟达显卡驱动 ：告诉计算机识别显卡硬件，调用其计算资源</p>
+<p><code>CUDA</code> ：是<code>NVIDIA</code>推出的只能用于<code>Nvidia GPU</code>的并行计算框架, 只有安装这个框架才能够进行复杂的并行计算， 主流的深度学习框架也都是基于<code>CUDA</code>进行<code>GPU</code>并行加速的</p>
+<p><code>nvidia-smi</code>查看驱动/<code>CUDA</code>版本：</p>
+<pre><code class="language-bash">+-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.42.01    Driver Version: 470.42.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|#########################+###############==+###############==|
+|   0  NVIDIA GeForce ...  Off  | 00000000:17:00.0 Off |                  N/A |
+| 27%   45C    P0    59W / 250W |      0MiB / 11019MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce ...  Off  | 00000000:18:00.0 Off |                  N/A |
+| 42%   59C    P0    74W / 250W |      0MiB / 11019MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  NVIDIA GeForce ...  Off  | 00000000:65:00.0 Off |                  N/A |
+| 41%   58C    P0    63W / 250W |      0MiB / 11016MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+</code></pre>
+<p>或</p>
+<pre><code class="language-bash">(base) zhaozixuan at jack in ~     2023/06/09 - 23:47:11
+$ ll /usr/local/cuda* -d
+lrwxrwxrwx  1 root root   21 Apr 28 14:56 /usr/local/cuda -&gt; /usr/local/cuda-11.4/
+drwxr-xr-x 18 root root 4.0K May  8  2022 /usr/local/cuda-10.1
+drwxr-xr-x 18 root root 4.0K Feb 18 13:42 /usr/local/cuda-10.2
+drwxr-xr-x 17 root root 4.0K Apr 28 14:59 /usr/local/cuda-11.4 
+</code></pre>
+<p>一般来说，更新的显卡适配版本更高的<code>CUDA</code>，而<code>CUDA</code>并不能向下兼容所有显驱</p>
+<p>因此，在升级<code>CUDA</code>时，如果<code>CUDA</code>版本不能兼容老显驱，则首先卸载驱动</p>
+<pre><code class="language-bash">sudo nvidia-uninstall
+sudo reboot
+</code></pre>
+<p>下载<code>Nvidia</code>官方相应<code>CUDA</code>的<code>runfile</code>后</p>
+<pre><code class="language-bash">sudo sh /path/to/cuda_&lt;cuda_version&gt;_linux.run
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222326.png" alt="" loading="lazy"></figure>
+<p>若卸载了老驱动，则勾选安装驱动，其他不需要配置，傻瓜式安装</p>
+<h4 id="比特大陆算丰显卡tpu">比特大陆算丰显卡（TPU）</h4>
+<p><em>Note: This section is deprecated</em></p>
+<h4 id="华为昇腾显卡npu">华为昇腾显卡（NPU）</h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9546711"><label class="task-list-item-label" for="task-item-9546711"> TODO</label></li>
+</ul>
+<h3 id="conda">CONDA</h3>
+<p><code>conda</code>（<code>Anaconda</code>/<code>miniconda</code>）是用于管理虚拟<code>Python</code>环境，以隔离多种<code>Python</code>环境的软件，也是指定虚拟<code>Python</code>环境下包版本管理的软件。<code>Anaconda</code>通过下载运行相应的<code>runfile</code>傻瓜式安装</p>
+<p><em>Note: The following is a copy of <a href="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html">yirui的实验室服务器使用指南</a></em></p>
+<h4 id="下载anaconda以及环境的搭建">下载Anaconda以及环境的搭建</h4>
+<p>主要是要注意怎么把conda命令加入到Ubuntu系统变量中</p>
+<p><em>注：<code>conda init &lt;shell_name&gt;</code>, 如<code>conda init zsh</code></em></p>
+<h4 id="anaconda国内镜像配置">Anaconda国内镜像配置</h4>
+<pre><code class="language-bash">$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+$ conda config --set show_channel_urls yes
+</code></pre>
+<h4 id="创建虚拟环境">创建虚拟环境</h4>
+<p>假设当前需要创建一个 <code>tensorflow-gpu 1.0</code> 的环境，可以按照如下的步骤操作：</p>
+<pre><code class="language-bash">$ conda create -n tf1-gpu python=3.6
+</code></pre>
+<p><strong>注意</strong>: <code>tensorflow 1.x</code>版本仅支持到<code>python3.6</code> 输入这一条命令以后，<code>anaconda</code>就会自动的配置一个<code>python3.6</code>版本的基础环境。之后需要进入到<code>tf1-gpu</code>中，去配置相应的其他环境：</p>
+<pre><code class="language-bash">$ conda activate tf1-gpu 
+</code></pre>
+<p>然后就在新的环境下，配置tensorflow的环境依赖。</p>
+<pre><code class="language-bash">$ conda install tensorflow-gpu=1.0
+</code></pre>
+<p>至此一个虚拟环境就创建出来了，后面就可以在这个新的环境中愉快地玩耍了。</p>
+<p>不过除此之外，还有一些其他常用的指令</p>
+<pre><code class="language-bash">conda remove -n [env-name] --all  #删除某一个环境
+conda env list  #查看所创建的环境列表 
+</code></pre>
+<h4 id="导出环境配置导入环境配置">导出环境配置/导入环境配置</h4>
+<pre><code class="language-bash">conda env export &gt; environment.yaml #环境配置导出
+conda env create -f environment.yaml #环境配置导入
+</code></pre>
+<p><em>Note: End of the copy</em></p>
+<ul>
+<li>清除<code>conda</code>缓存: <code>conda clean --all </code></li>
+<li><code>mamba</code>：为了不被单线程的<code>conda install</code>指令慢的气死，可以考虑安装<code>mamba</code>，多线程版<code>conda</code>包（<code>conda install mamba -n base -c conda-forge</code>），之后将管理指令中的<code>conda</code>替换为<code>mamba</code></li>
+</ul>
+<h3 id="pytorch">PyTorch</h3>
+<h4 id="install">Install</h4>
+<p><a href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a></p>
+<p>注意<code>pip</code>安装的<code>.whl</code>对应的<code>cu</code>（<code>cuda</code>）版本或<code>conda</code>安装的<code>cudatoolkit</code>版本，一般来说，不保证<code>pytorch</code>库能兼容比其要求低的<code>cuda</code>版本的环境</p>
+<h4 id="cuda-device-dataparallel">cuda device &amp; DataParallel</h4>
+<pre><code class="language-python">print(&quot;torch.__version__: &quot;, torch.__version__)
+print(&quot;torch.cuda.is_available(): &quot;, torch.cuda.is_available())
+print(&quot;torch.version.cuda: &quot;, torch.version.cuda)
+print(&quot;cuda devices: &quot;, [torch.cuda.get_device_properties(i) for i in range(torch.cuda.device_count())])
+# 检查运行时cuda版本，cuda是否可用，GPU信息
+########### 
+# jupyter notebook @ jack
+# torch.__version__:  1.12.1
+# torch.cuda.is_available():  True
+# torch.version.cuda:  10.2
+# cuda devices:  [_CudaDeviceProperties(name='GeForce GTX 1080 Ti', major=6, minor=1, total_memory=11178MB, multi_processor_count=28), _CudaDeviceProperties(name='GeForce GTX 1080 Ti', major=6, minor=1, total_memory=11176MB, multi_processor_count=28)]
+device = torch.device(&quot;cuda&quot; if torch.cuda.is_available() else &quot;cpu&quot;) 
+model = MyNetwork()
+model = nn.DataParallel(model).to(device)
+# 使用所有GPU
+model = nn.DataParallel(model, device_ids=[0, 2]).to(device)
+# 指定第0，2号GPU
+#or
+import os 
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,2'
+model = nn.DataParallel(model).to(device)
+#or
+CUDA_VISIBLE_DEVICES=0,2 python3 train.py
+</code></pre>
+<h3 id="remote-jupyter-notebook">remote Jupyter NoteBook</h3>
+<p><code>jupyter</code>框架对应的<code>.ipynb</code>（<code>jupyter notebook</code>）是可以分体运行+输出存储的<code>python</code>脚本</p>
+<p><code>jupyter</code>的优点是，<code>matplotlib</code>绘图可以内嵌在结果中，代码可以方便地按<code>cell</code>分体运行，适合用来学习<code>python</code>库（不少教程是<code>.ipynb</code>的），或者看画图效果</p>
+<p>以实验室服务器<code>Anaconda</code>多<code>Python</code>环境下配置<code>jupyter</code>，并使用<code>vscode</code>/浏览器远程访问<code>jupyter</code>服务为例</p>
+<h4 id="jupyter-kernel">Jupyter Kernel</h4>
+<p>注意，一个虚拟<code>Python</code>环境对应于一个<code>Jupyter Kernel</code></p>
+<p>首先要把<code>Anaconda</code>中的虚拟<code>Python</code>环境注册到<code>Jupyter Kernel</code>中，所用工具为<code>ipykernel</code>库</p>
+<p>在默认的<strong>base</strong>环境下：</p>
+<pre><code class="language-bash">conda install jupyter ipykernel
+</code></pre>
+<p>在想要注册的环境下，例如一个<code>conda</code>中名为<code>cuda11.4</code>的环境：</p>
+<pre><code class="language-bash">conda activate cuda11.4
+conda install ipykernel
+python -m ipykernel install --user  --name cuda11.4 --display-name &quot;cuda11.4-for-learning-pytorch&quot;
+</code></pre>
+<p><strong>注意：</strong><code>--name</code>参数为<code>jupyter kernelspec list</code>所列<code>kernel</code>之名，<code>--display-name</code>为<code>jupyter notebook</code>的<code>web</code>界面中<code>select kernel</code>时所列<code>kernel</code>之名</p>
+<p>回到默认的<strong>base</strong>环境下（也就是使用<code>base</code>环境管理<code>Jupyter</code>，因为你不会想，也无法在<code>conda</code>里删除<code>base</code>环境）：</p>
+<pre><code class="language-bash">conda activate base
+</code></pre>
+<h4 id="远程访问jupyter">远程访问jupyter</h4>
+<p>在服务器上，利用之前讲过的<code>tmux</code>，在它里面挂一个以无<code>web</code>界面的方式启动<code>jupyter</code>的服务</p>
+<pre><code class="language-bash">tmux
+tmux rename jupyter_server
+conda activate base
+jupyter notebook --no-browser --port=&lt;server_port&gt;
+#例 jupyter notebook --no-browser --port=8889
+</code></pre>
+<p>在<strong>个人计算机上</strong>用ssh代理绕一下服务器防火墙:-/</p>
+<pre><code class="language-bash">ssh -N -f -L localhost:&lt;local_port&gt;:localhost:&lt;server_port&gt; &lt;user&gt;@&lt;server_addr&gt;
+#例 ssh -N -f -L localhost:8002:localhost:8889 zhaozixuan@jack.buaadml.info
+</code></pre>
+<p>此时访问<code>http://localhost:&lt;local_port&gt;</code>（例<code>http://localhost:8002</code>）（带上<code>?toekn=&lt;token&gt;</code>，如果配置了的话）进入<code>jupyter</code>，注意，以上指令创建的<code>ssh</code>进程在后台运行，需要时请<code>ps -ef|grep ssh</code>找到对应进程<code>kill</code>之</p>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222409.png" alt="" loading="lazy"></figure>
+<h4 id="连接vscode">连接vscode</h4>
+<ul>
+<li><code>vscode</code>安装MircoSoft官方的<code>jupyter</code>插件</li>
+<li><code>.ipynb</code>文件下点击右上角的<code>Select Kernel</code>，将唤起<code>vscode</code>的全局命令行</li>
+<li>选择<code>Existing Jupyter Server -&gt; Enter the URL of the running Jupyter server</code>，键入代理到本地的<code>jupyter</code>地址，键入密码（如果设置了的话）和服务器配置名，选择<code>Kernel</code></li>
+</ul>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222428.png" alt="" loading="lazy"></figure>
+<h4 id="显存释放">显存释放</h4>
+<ul>
+<li>
+<p><code>cell</code>运行完后，<code>jupyter</code>不会主动结束其<code>python</code>进程，解释器的变量会驻存在内存/显存中，如果不再需要运行<code>cell</code>得到新结果，请及时在结束计算后手动<code>shutdown</code>内核或关闭<code>running</code>的<code>notebook</code></p>
+<ul>
+<li>或者在你最后想运行的<code>cell</code>末尾追加<code>quit(0)</code>，可以直接自动把内核挂掉</li>
+</ul>
+</li>
+</ul>
+<h3 id="jetbrains-pycharm推荐">Jetbrains Pycharm（推荐）</h3>
+<h4 id="教育认证">教育认证</h4>
+<p><a href="https://www.jetbrains.com/zh-cn/community/education/#students">link</a></p>
+<p>建议使用北航邮箱激活Jetbrains教育认证，每次激活延期一年所有Jetbrains <code>Professional IDE</code>的使用权</p>
+<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610220848.png" alt="" loading="lazy"></figure>
+<p>相比于<code>vscode</code>, <code>pycharm IDE</code>搭建环境比较方便，不需要多少额外插件，集成了<code>ssh-interpreter</code>,<code>SFTP</code>,对<code>conda</code>,<code>venv</code>的友好支持等。为了提高工作效率，可以在本地<code>pycharm</code>编辑源码，利用服务器的<code>python</code>解释器对代码解释与运行程序，使用<code>SFTP</code>工具自动同步远程/本地</p>
+<h4 id="以配置kevin的远程conda环境为例">以配置kevin的远程conda环境为例</h4>
+<ul>
+<li><code>Setting -&gt; Project -&gt; Add Interpreter -&gt; On SSH...</code></li>
+<li>填写地址<code>kevin.buaadml.info</code>与<code>ldap</code>用户名，确保当前设备可以<code>ssh</code>免密</li>
+<li>连接到服务器，<code>IDE</code>显示探查界面即连接</li>
+</ul>
+<figure data-type="image" tabindex="11"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610220856.png" alt="" loading="lazy"></figure>
+<ul>
+<li>选择<code>System Interpreter</code>，服务器上在相应<code>conda</code>环境下<code>which python</code>，将打印路径粘贴到配置，<code>Sync folders</code>选项将新建一个<code>SFTP</code>配置</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222457.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p><code>Menu -&gt; Tools -&gt; Depolyment -&gt; Configuration </code>修改<code>SFTP</code>配置，解释器与<code>SFTP</code>是独立的，可以将<code>Sync folders</code>生成的删除之，使用与<code>gaia</code>的文件同步即可。</p>
+</li>
+<li>
+<p>勾选<code>Menu -&gt; Tools -&gt; Depolyment -&gt; Automatic Upload</code>可启用保存时上传当前文件</p>
+</li>
+</ul>
+<p>btw, 喜欢<code>vscode UI</code>的可以安装<code>2023.1</code>后版本的<code>Pycharm</code>，新<code>UI</code>更现代，更接近<code>vscode</code>的简洁风格</p>
+<figure data-type="image" tabindex="13"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222533.png" alt="" loading="lazy"></figure>
+<h4 id="remote-clion-idea">remote CLion, Idea...</h4>
+<p><code>JetBrains</code>系<code>IDE</code>远程环境配置 大差不差</p>
+<p>btw,远程协作方面推荐<code>JetBrains</code>的原生插件<code>Code With Me</code>:<a href="https://www.jetbrains.com/code-with-me/">link</a></p>
+<h3 id="python">Python</h3>
+<h4 id="三方库">三方库</h4>
+<p><a href="https://anaconda.org/">https://anaconda.org/</a><br>
+<a href="https://pypi.org/">https://pypi.org/</a></p>
+<h4 id="python-进阶">Python 进阶</h4>
+<p><a href="https://book.douban.com/subject/27028517/">Fluent Python</a>, <a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/chapters/p09_meta_programming.html">Python Cookbook</a>, <a href="https://book.douban.com/subject/35334595/">Effective Python</a></p>
+<p>掌握一门脚本语言吧，如<code>Python</code>/<code>Linux Shell</code></p>
+<h3 id="vscode">VSCode</h3>
+<h4 id="插件推荐">插件推荐</h4>
+<p><code>jupyter</code>:</p>
+<p>...</p>
+<h3 id="docker">Docker</h3>
+<p><a href="https://docs.docker.com/get-started/">Docker Docs</a>,<a href="https://book.douban.com/subject/30486354/">《深入浅出Docker》</a>, <a href="https://kubernetes.io/zh-cn/docs/home/">K8s Doc</a></p>
+<h3 id="redis">Redis</h3>
+<h3 id="elasticsearch">ElasticSearch</h3>
+<p><em>Acknowledgement: This section was originally created by <a href="https://github.com/zhangguiwei610">zhangguiwei</a></em></p>
+<h3 id="network-tools">Network Tools</h3>
+<h4 id="校园网登陆脚本">校园网登陆脚本</h4>
+<pre><code class="language-bash">cd /home/dml_401/Login_Net
+python Login.py#查看用法
+</code></pre>
+<h4 id="postman">postman</h4>
+<p>一个跨平台，并支持在线使用的<code>HTTP RESTful API</code>调试工具，显然从功能性与易用性上看，是比<code>curl</code>命令好用很多很多的</p>
+<p><a href="https://web.postman.co/">link</a></p>
+<figure data-type="image" tabindex="14"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222552.png" alt="" loading="lazy"></figure>
+<p>注意，当请求地址是一个内网地址时，无法在线通过<code>postman</code>连接，根据<code>postman</code>报错指引<code>Use Postman's Desktop Agent</code>本地安装一个<code>postman agent</code>程序，启动之，就能继续在线调试内网上的接口</p>
+<h4 id="ncnetstat">nc/netstat</h4>
+<p>均为传输层的<code>Linux</code>工具命令，<code>nc</code>用于发起<code>TCP/UDP</code>连接；<code>netstat</code>用于探查端口，如<code>netstat -ntlp</code>查看所有<code>TCP Socket</code>，<code>lsof -i:&lt;port_num&gt;</code>查看监听具名端口的进程</p>
+<h4 id="wiresharktcpdump">wireshark/tcpdump</h4>
+<p>链路层以上抓包工具，<code>tcpdump</code>命令参考<a href="https://man7.org/linux/man-pages/man1/tcpdump.1.html">link</a></p>
+<p><code>WireShark</code>是一个跨平台的抓包软件，优点在于开源、支持协议多、<code>GUI</code>友好</p>
+<h3 id="domain-name-cloud-server">Domain Name &amp; Cloud Server</h3>
+<h4 id="云服务器">云服务器</h4>
+<p>可以是获得公网<code>IP</code>的一种方式</p>
+<p>国内厂商: <a href="https://developer.aliyun.com/plan/student">阿里</a>，<a href="https://cloud.tencent.com/act/campus">腾讯</a>， <a href="https://www.huaweicloud.com/product/hecs.html">华为</a>,  <a href="https://cloud.baidu.com/campaign/PromotionActivity/index.html">百度</a> 等，</p>
+<p>以上厂商以学生认证+新用户购买的方式，基本可以以一百块左右买到一年的云服务器</p>
+<p>通常云服务器控制台会有安全组设置，也就是厂商层面的防火墙，构建应用时注意放行相应端口</p>
+<h4 id="域名">域名</h4>
+<p>1.厂商：国内阿里云、腾讯云等，国外<code>GoDaddy</code>等，注意，在国内厂商购买的域名，或是<code>.cn</code>等后缀的域名，需要根据购买后厂商提示在工信部网站进行备案（同时严格遵守我国网信法），否则会被<code>DNS</code>服务器拒绝域名解析</p>
+<p>2.<code>DNS</code>：通常来讲，一个域名往往可以通过<code>DNS</code>映射到一个<code>IP</code>地址（<code>A</code>）或另一个域名（<code>CNAME</code>），但不与端口绑定，为实现一级域名或二级域名到具体端口的路由。可以使用<code>nginx</code>的反向代理或<code>docker virtual host</code>等技术</p>
+<h3 id="github">GitHub</h3>
+<h4 id="pull-request">Pull Request</h4>
+<ul>
+<li><code>GitHub</code>网页上<code>fork</code>原始仓库</li>
+<li>以<code>ssh</code>协议<code>clone</code>自己的<code>fork</code>仓到本地（<code>GitHub</code>官方已禁用用户密码管理仓库，不使用<code>ssh</code>需要使用<code>GitHub token</code>，你不会喜欢麻烦的<code>Github token</code>的）</li>
+<li><code>commit</code></li>
+</ul>
+<pre><code class="language-bash">git checkout -b any_branch_name
+git add /path/to/upload/files
+git status #检查git暂存区
+git commit -m “更新说明”
+git push origin any_branch_name
+</code></pre>
+<ul>
+<li>回到<code>GitHub</code>网页<code>fork</code>仓，会提示<code>compare &amp; pull request</code>，直接在网页端按提示操作</li>
+<li><code>PR</code>被批准通过后，原仓库可能会额外产生一次<code>merge commit</code>，在自己<code>fork</code>仓库的<code>github</code>界面，点开之前<code>push</code>的<code>branch</code>的网页界面,有<code>sync fork</code>选项快速同步合并更新后的原始仓库</li>
+</ul>
+<h4 id="github-pages">Github Pages</h4>
+<p><code>Github Pages</code>（仓库<code>Settings -&gt; Code and automation -&gt; Pages</code>）可以由<code>github</code>托管一个静态网站，所谓静态就是说没有后端，没有数据库，只有一坨<code>HTML/CSS/JS</code>，一般来说<code>Github Pages</code>上的大部分内容是我们写的<code>markdown</code>渲染出的<code>HTML</code>，一般通过<code>Pages branch</code>/<code>Github Actions</code>在<code>commit</code>时构建网站</p>
+<figure data-type="image" tabindex="15"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610222620.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>jekyll</p>
+<p><a href="https://docs.github.com/zh/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">jekyll</a>是<code>github</code>官方原生支持的静态建站框架，需要<code>Ruby</code>环境，不会玩，欢迎补充</p>
+</li>
+<li>
+<p>Gridea<br>
+<code>Gridea</code>是相当简单的<code>Github Pages</code>静态建站工具：<a href="https://github.com/getgridea/gridea">link</a></p>
+</li>
+</ul>
+<p>配置好<code>github token</code>（注意<code>token</code>需要对仓库操作放权）与仓库地址，写好<code>markdown</code>一键同步即可，<code>Gridea</code>主题:<a href="https://github.com/topics/gridea-theme">link</a></p>
+<p>注意，使用<code>Gridea</code>将放弃<code>git</code>的版本控制功能，因为<code>Gridea</code>的推送方式为<code>force reset branch</code>再<code>commit</code></p>
+<ul>
+<li>
+<p>图床与防盗链</p>
+<p>为静态网站准备一个图床，因为：1.减小<code>Github Pages</code>大小 2.如果把图片存储在<code>zhihu</code>或<code>cnblogs</code>这些启用防盗链的网站上，那么在这些站点之外的网站页面上链接到这些图像，那么会被拒绝加载（<code>403</code>）</p>
+<p>可以使用非常简单易用的<a href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a>，搭建<code>Github</code>图床等图床</p>
+</li>
+<li>
+<p>Severless</p>
+<p>静态网站不能利用数据库，因此可以使用<code>Serverless </code>的服务在云上存储动态数据，如使用非常简单的<code>valine</code>（<a href="https://valine.js.org/quickstart.html">link</a>）接入评论功能</p>
+<ul>
+<li>
+<p>搭建非静态网站</p>
+<p>可以在自己的服务器上建站，摆脱静态网站之限制，可以考虑<code>hexo</code>, <code>Hugo</code>, <code>Wordpress</code>等框架</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="github-action">Github Action</h4>
+<h3 id="nat-traversal">NAT traversal</h3>
+<p><strong>！！！以下软件请仅用于个人计算机，且自行承担一切网安风险（如校园网环境下隧道有可能被北航墙掉）！！！</strong></p>
+<h4 id="反向代理">反向代理</h4>
+<figure data-type="image" tabindex="16"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610220952.png" alt="" loading="lazy"></figure>
+<p>以上是正向代理与反向代理两种模式的示意图，可以看到正向代理下，被代理的是请求机器，所以代理客户端在请求机器，代理服务端跑在代理服务器上。这样，指明访问地址时，代理软件会帮我们通过代理服务器做中转，从而绕过防火墙等网络策略访问到目标服务器。</p>
+<figure data-type="image" tabindex="17"><img src="https://raw.githubusercontent.com/zixfy/imageshack2023/main/img/20230610221007.png" alt="" loading="lazy"></figure>
+<p>而在反向代理下，被代理的是目标服务器，请求机器上，代理服务器就等价于目标服务器。请求机器不必给代理服务器提供目标服务器的网址等路由信息，通常它也无法知晓。这时，代理软件需要在 代理服务器（中转服务器）上跑服务端，在目标服务器上跑客户端。反向代理的场景：1.负载均衡，请求转发到节点，如nginx 2.内网穿透：设想我想把个人计算机搭建为服务器，但没有公网IP，只有局域网IP，那么可以把我的计算机交给代理服务器代理，利用它的公网IP将个人计算机暴露在互联网上。没有公网IP时，自然的解决方案就可以是内网穿透，也就是打洞。</p>
+<h4 id="frp">frp</h4>
+<p><code>frp</code>：开源软件，使用需要一台中转服务器</p>
+<p>以<code>frp</code>反向代理实现内网穿透<code>Secure Shell</code>服务为例</p>
+<p><code>Github Release</code>: <a href="https://github.com/fatedier/frp/releases">link</a> ,下载相应<code>os</code>与指令集架构的压缩包，解压之，目录下<code>frpc</code>/<code>frps</code>是客户端，<code>frpc.ini</code>/<code>frps.ini</code>为相应配置文件</p>
+<p>在内网机器上配置<code>frpc.ini</code></p>
+<pre><code class="language-bash">[common]
+server_addr = &lt;remote_addr&gt; #远程端frps端服务器的公网地址
+server_port = 7001 #远程服务端frps占用端口
+token = &lt;use_a_random_generator_to_get_a_more_complex_token&gt; 
+# 客户端服务端对称认证密钥，可256位
+use_encryption = true
+use_compression = true
+#报文对称加密与压缩
+#tls_enable = true
+#tls_trusted_ca_file = /to/ca/path/ca.crt
+#TLS加密，https://gofrp.org/docs/features/common/network/network-tls/
+#log_level = debug
+log_file = /var/log/frpc.log
+#志记
+[ssh] #配置名字
+type = tcp #指定协议
+local_ip = 127.0.0.1 # 穿透的地址，本机可ssh登录的地址即可，可以是同局域网另一机器，可改
+local_port = 22 # ssh监听端口
+remote_port = 8022 # 代理到frps服务器的端口号，可改
+</code></pre>
+<p>在中转机器上配置<code>frps.ini</code>，确保中转机器可被请求机器与内网机器访问</p>
+<pre><code class="language-bash">[common]
+bind_port = 7001 #frps占用端口
+token = &lt;use_a_random_generator_to_get_a_more_complex_token&gt; 
+# 客户端服务端对称认证密钥，可256位
+use_encryption = true
+use_compression = true
+#报文对称加密与压缩
+#vhost_http_port = 80 
+#穿透http服务所用端口，https://gofrp.org/docs/examples/vhost-http/
+#tls_enable = true
+#tls_cert_file = /root/frp/server.crt
+#tls_key_file = /root/frp/server.key
+#TLS加密，https://gofrp.org/docs/features/common/network/network-tls/
+#log_level = debug
+log_file = /var/log/frps.log
+#志记
+</code></pre>
+<p>以<code>/path/to/frpc -c /path/to/frpc.ini</code>启动内网机器的客户端，<code>/path/to/frps -c /path/to/frps.ini</code>启动中转服务器的服务端，此时在请求机器上<code>ssh &lt;user&gt;@&lt;remote_addr&gt; -p 8022</code>等价于<code>ssh</code>登录内网机器（<code>local_ip:local_port</code>）</p>
+<p><strong>注意</strong>，我们需要保证<code>frp</code>，特别是<code>frpc</code>的稳定性，因为<code>frpc</code>中断后必须要有主动重连<code>frps</code>的能力，因为<code>frps</code>无法寻址到使用<code>NAT</code>的内网机器</p>
+<p>所以使用上文说到的<code>systemd</code>为例，为<code>frpc</code>/<code>frps</code>注册守护进程<code>vi /etc/systemd/system/frps.service</code></p>
+<pre><code class="language-bash">[Unit]
+Description=frps(nei_wang_chuan_tou)
+After=network.target
+Wants=network.target
+
+[Service]
+Restart=on-failure
+RestartSec=5
+ExecStart=/root/frp/frps -c /root/frp/frps.ini
+
+[Install]
+WantedBy=multi-user.target                     
+</code></pre>
+<p>其中<code>ExecStart</code>为启动命令（<code>systemctl start</code>），当进程异常终止时等待<code>RestartSec=5</code>秒重新启动</p>
+<pre><code class="language-bash">systemctl daemon-reload # 刷新配置
+systemctl start frps.service # 启动服务
+systemctl enable frps.service # 开机自启
+</code></pre>
+<h4 id="autossh内网穿透">autossh内网穿透</h4>
+<p><a href="https://liyirui-git.github.io/tech/%E6%8A%98%E8%85%BE/autossh%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html">liyirui.github.io</a></p>
+<h4 id="闭源软件">闭源软件</h4>
+<ul>
+<li>向日葵/ToDesk：主要功能是远程桌面控制</li>
+<li>花生壳：免费版有隧道数量限制，且已经不支持穿透<code>http</code>协议，支持<code>tcp/udp/https</code>（2023.3）</li>
+<li><code>ngrok</code>：2.x版本已闭源</li>
+<li><code>cpolar</code>: 同样只需要部署客户端，服务端由厂商服务器支持,<a href="https://www.cpolar.com/"> https://www.cpolar.com/</a></li>
+</ul>
+<p>以<code>cpolar</code>实现通过<code>anna</code>（windows）内网穿透<code>ssh</code>与<code>http</code>服务为例，配置<code>C:\Users\Administrator\.cpolar\cpolar.yml</code></p>
+<pre><code class="language-yaml">authtoken: &lt;cpolar_auth&gt;
+tunnels:
+  ssh:
+    proto: tcp
+    addr: &quot;10.*.*.*:22&quot;
+    remote_addr: 8.tcp.cpolar.top:1****
+  vue:
+    proto: http
+    addr: &quot;10.*.*.*.94:*****&quot;
+    subdomain: vssvue
+</code></pre>
+<p><strong>注意</strong>，其中被穿透的机器为<code>10.*.*.*</code>，而不是<code>anna</code>，<code>anna</code>只是一个二级跳板</p>
+<p><code>&lt;cpolar_auth&gt;</code>为<code>cpolar</code>账户的密钥, <code>remote_addr</code>与<code>subdomain</code>字段为保留二级域名/端口，需要在<code>cpolar</code>官网使用自己的账号购买</p>
+<p>启动<code>cpolar</code></p>
+<pre><code class="language-powershell">#cmd
+D:\
+cd cpolar
+.\cpolar.exe list
+.\cpolar.exe start vue
+.\cpolar.exe start ssh
+</code></pre>
+<p>以我当前的配置文件与<code>cpolar</code>账号设置,使用<code>ssh root@***.cpolar.*** -p 1****</code>登录内网机器，通过<code>http://vssvue.************</code>访问<code>web</code>应用</p>
+<p>最后使用批处理脚本自动重启<code>cpolar</code>客户端</p>
+<pre><code class="language-powershell">#ssh.bat
+:start
+.\cpolar.exe start ssh
+timeout /t 60 /nobreak &gt; nul
+goto start
+</code></pre>
+<p><code>.\ssh.bat</code>运行之</p>
+<h3 id="ldap">LDAP</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9191356"><label class="task-list-item-label" for="task-item-9191356"> TODO</label></li>
+</ul>
+<h3 id="plugin-a-new-machine">Plugin a new machine</h3>
+<ul>
+<li>ubuntu启动盘制作：略</li>
+<li>装机脚本</li>
+<li>运行脚本后的LDAP配置</li>
+<li>安装显驱：使用nvidia runfile</li>
+<li>启动GPU监控脚本</li>
+</ul>
+<h3 id="latexmarkdown">LaTeX/Markdown</h3>
+<ul>
+<li>toolchain: 1. <code>Overleaf</code>, 在线就是方便 2.可以装一个跨平台<code>LaTeX</code>编译器，如<code>TeXLive</code>, <code>MikTex</code>，然后使用相关<code>IDE</code>，如<code>TeXstudio</code>, <code>VSCode</code>等</li>
+<li>LaTeX插入伪代码：<code>\usepackage{algorithmicx}</code> or <code>\usepackage{algpseudocode}</code> or <code>\usepackage{algpseudocodex}</code></li>
+<li>LaTeX插入代码块</li>
+</ul>
+<pre><code class="language-c">\usepackage{listings}
+\lstset{
+	basicstyle          =   \sffamily,          
+	keywordstyle        =   \bfseries,          
+	commentstyle        =   \rmfamily\itshape,  
+	stringstyle         =   \ttfamily, 
+	flexiblecolumns,               
+	numbers             =   left,  
+	showspaces          =   false,  
+	numberstyle         =   \zihao{-5}\ttfamily,    
+	showstringspaces    =   false,
+	captionpos          =   t,      
+	frame               =   lrtb,   
+}
+
+\lstdefinestyle{python}{
+	language        =   Python, % Python
+	basicstyle      =   \zihao{-5}\ttfamily,
+	numberstyle     =   \zihao{-5}\ttfamily,
+	keywordstyle    =   \color{blue},
+	keywordstyle    =   [2] \color{teal},
+	stringstyle     =   \color{magenta},
+	commentstyle    =   \color{red}\ttfamily,
+	breaklines      =   true,   
+	columns         =   fixed,  
+	basewidth       =   0.5em,
+}\setmainfont{Times New Roman}
+\title{templates} 
+\author{_}
+\date{2023.3} 
+\makeatletter
+\begin{document}
+	\maketitle
+\lstinputlisting[
+style       =   python,
+]{1.py}
+\end{document}
+</code></pre>
+<ul>
+<li>LaTex做ppt: <code>Beamer</code></li>
+<li>markdown编辑器：<code>Typora</code>,所见即所得</li>
+<li>markdown最终会渲染为<code>HTML</code>，所以<code>markdown</code>是原生可内嵌<code>html</code>块的</li>
+</ul>
+<h3 id="endnote">EndNote</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2719853"><label class="task-list-item-label" for="task-item-2719853"> TODO</label></li>
+</ul>
+<h3 id="util">util</h3>
+<ul>
+<li><a href="https://github.com/BHOSC/BUAAthesis">北航毕设LaTeX模板</a></li>
+<li><a href="https://github.com/TheBloodthirster/BUAA_Course_Sharing">北航课程资料仓</a></li>
+<li><a href="https://www.cnblogs.com/khunkin/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">北航计算机网络实验博客</a></li>
+<li><a href="https://bhpan.buaa.edu.cn:443/link/2206208E3EA8D07A4C70719806DE989E">一个北航ppt白板模板</a></li>
+<li><a href="https://bhpan.buaa.edu.cn:443/link/8118A1CB56FD3022C8ADB123C6D0205F">北航《大数据处理与机器学习算法实训》23春作业与代码</a></li>
+<li><a href="https://bhpan.buaa.edu.cn:443/link/6C0C4889FAFCC1D44F0B16A30AEC8A51">北航《算法分析与设计》22秋作业</a>， <a href="https://bhpan.buaa.edu.cn:443/link/6F788707FB9D255AD75DD694F43FB828">《算法分析与设计》20春作业</a></li>
+<li><a href="http://cs231n.stanford.edu/">Stanford University CS231n</a></li>
+<li><a href="https://github.com/zixfy/cs231n_assignments_2021">zixfy's cs231n_assignments_2021</a></li>
+<li><a href="https://godbolt.org/">Compiler Exploer</a></li>
+<li><a href="https://www.overleaf.com/">Overleaf 编辑器</a></li>
+<li><a href="https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf">LaTeX Symbols</a></li>
+<li><a href="https://www.dokuwiki.org/zh:wiki:syntax">DokuWiki tutorials</a></li>
+<li><a href="https://paperswithcode.com/">paperswithcode</a></li>
+</ul>
+<p>以上，初稿于2023.6</p>
+]]></content>
+    </entry>
+</feed>
